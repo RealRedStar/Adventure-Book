@@ -200,6 +200,7 @@ namespace Adventure_book
             this.magicalChest.Size = new System.Drawing.Size(150, 150);
             this.magicalChest.TabIndex = 7;
             this.magicalChest.UseVisualStyleBackColor = false;
+            this.magicalChest.Click += new System.EventHandler(this.magicalChest_Click);
             // 
             // normalChest
             // 
@@ -212,6 +213,7 @@ namespace Adventure_book
             this.normalChest.Size = new System.Drawing.Size(150, 150);
             this.normalChest.TabIndex = 6;
             this.normalChest.UseVisualStyleBackColor = false;
+            this.normalChest.Click += new System.EventHandler(this.normalChest_Click);
             // 
             // Form1
             // 

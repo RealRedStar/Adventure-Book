@@ -16,6 +16,23 @@ namespace Adventure_book
 
         public Point mouseLocation;
 
+        public void chestEnable()
+        {
+            normalChest.Visible = true;
+            magicalChest.Visible = true;
+
+            normalChestLabel.Visible = true;
+            magicalChestLabel.Visible = true;
+        }
+        public void chestDisable()
+        {
+            normalChest.Visible = false;
+            magicalChest.Visible = false;
+
+            normalChestLabel.Visible = false;
+            magicalChestLabel.Visible = false;
+        }
+
         Color unpushed = ColorTranslator.FromHtml("#4238FF");
         Color pushed = ColorTranslator.FromHtml("#00008B");
         public Form1()
@@ -66,6 +83,9 @@ namespace Adventure_book
             chestroom.Image = Properties.Resources.chestWhite;
             settings.Image = Properties.Resources.gearBlack;
 
+            chestEnable();
+
+
         }
 
         private void calendar_Click(object sender, EventArgs e)
@@ -78,6 +98,9 @@ namespace Adventure_book
             calendar.Image = Properties.Resources.calendarWhite;
             chestroom.Image = Properties.Resources.chestBlack;
             settings.Image = Properties.Resources.gearBlack;
+            normalChest.Visible = false;
+
+            chestDisable();
         }
 
         private void character_Click(object sender, EventArgs e)
@@ -90,6 +113,8 @@ namespace Adventure_book
             calendar.Image = Properties.Resources.calendarBlack;
             chestroom.Image = Properties.Resources.chestBlack;
             settings.Image = Properties.Resources.gearBlack;
+
+            chestDisable();
         }
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -117,6 +142,24 @@ namespace Adventure_book
             chestroom.Image = Properties.Resources.chestBlack;
             settings.Image = Properties.Resources.gearWhite;
 
+            chestDisable();
+
+        }
+
+        private void normalChest_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(normalChestLabel.Text) > 0)
+            {
+                normalChestLabel.Text = (int.Parse(normalChestLabel.Text) - 1).ToString();
+            }
+        }
+
+        private void magicalChest_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(magicalChestLabel.Text) > 0)
+            {
+                magicalChestLabel.Text = (int.Parse(magicalChestLabel.Text) - 1).ToString();
+            }
         }
     }
 }
