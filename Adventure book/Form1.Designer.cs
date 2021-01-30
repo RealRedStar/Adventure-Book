@@ -36,14 +36,14 @@ namespace Adventure_book
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.normalChestLabel = new System.Windows.Forms.Label();
             this.magicalChestLabel = new System.Windows.Forms.Label();
+            this.normalChestLabel = new System.Windows.Forms.Label();
+            this.settings = new System.Windows.Forms.Button();
             this.character = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.Button();
             this.chestroom = new System.Windows.Forms.Button();
             this.magicalChest = new System.Windows.Forms.Button();
             this.normalChest = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -113,35 +113,49 @@ namespace Adventure_book
             this.panel2.Size = new System.Drawing.Size(564, 326);
             this.panel2.TabIndex = 1;
             // 
-            // normalChestLabel
-            // 
-            this.normalChestLabel.AutoSize = true;
-            this.normalChestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.normalChestLabel.ForeColor = System.Drawing.Color.White;
-            this.normalChestLabel.Location = new System.Drawing.Point(215, 221);
-            this.normalChestLabel.Name = "normalChestLabel";
-            this.normalChestLabel.Size = new System.Drawing.Size(18, 20);
-            this.normalChestLabel.TabIndex = 8;
-            this.normalChestLabel.Text = "0";
-            this.normalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // magicalChestLabel
             // 
             this.magicalChestLabel.AutoSize = true;
             this.magicalChestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.magicalChestLabel.ForeColor = System.Drawing.Color.White;
-            this.magicalChestLabel.Location = new System.Drawing.Point(298, 221);
+            this.magicalChestLabel.Location = new System.Drawing.Point(420, 282);
             this.magicalChestLabel.Name = "magicalChestLabel";
             this.magicalChestLabel.Size = new System.Drawing.Size(18, 20);
             this.magicalChestLabel.TabIndex = 9;
             this.magicalChestLabel.Text = "1";
             this.magicalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // normalChestLabel
+            // 
+            this.normalChestLabel.AutoSize = true;
+            this.normalChestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.normalChestLabel.ForeColor = System.Drawing.Color.White;
+            this.normalChestLabel.Location = new System.Drawing.Point(138, 282);
+            this.normalChestLabel.Name = "normalChestLabel";
+            this.normalChestLabel.Size = new System.Drawing.Size(18, 20);
+            this.normalChestLabel.TabIndex = 8;
+            this.normalChestLabel.Text = "0";
+            this.normalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // settings
+            // 
+            this.settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(56)))), ((int)(((byte)(255)))));
+            this.settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settings.ForeColor = System.Drawing.Color.White;
+            this.settings.Image = global::Adventure_book.Properties.Resources.gearBlack;
+            this.settings.Location = new System.Drawing.Point(12, 305);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(77, 77);
+            this.settings.TabIndex = 6;
+            this.settings.UseVisualStyleBackColor = false;
+            this.settings.Click += new System.EventHandler(this.settings_Click);
+            // 
             // character
             // 
             this.character.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(56)))), ((int)(((byte)(255)))));
             this.character.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.character.ForeColor = System.Drawing.Color.White;
+            this.character.Image = global::Adventure_book.Properties.Resources.userBlack;
             this.character.Location = new System.Drawing.Point(12, 222);
             this.character.Name = "character";
             this.character.Size = new System.Drawing.Size(77, 77);
@@ -154,6 +168,7 @@ namespace Adventure_book
             this.calendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(56)))), ((int)(((byte)(255)))));
             this.calendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.calendar.ForeColor = System.Drawing.Color.White;
+            this.calendar.Image = global::Adventure_book.Properties.Resources.calendarBlack;
             this.calendar.Location = new System.Drawing.Point(12, 139);
             this.calendar.Name = "calendar";
             this.calendar.Size = new System.Drawing.Size(77, 77);
@@ -166,6 +181,7 @@ namespace Adventure_book
             this.chestroom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(56)))), ((int)(((byte)(255)))));
             this.chestroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chestroom.ForeColor = System.Drawing.Color.White;
+            this.chestroom.Image = global::Adventure_book.Properties.Resources.chestBlack;
             this.chestroom.Location = new System.Drawing.Point(12, 56);
             this.chestroom.Name = "chestroom";
             this.chestroom.Size = new System.Drawing.Size(77, 77);
@@ -175,45 +191,36 @@ namespace Adventure_book
             // 
             // magicalChest
             // 
-            this.magicalChest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(56)))), ((int)(((byte)(255)))));
+            this.magicalChest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.magicalChest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.magicalChest.ForeColor = System.Drawing.Color.White;
-            this.magicalChest.Location = new System.Drawing.Point(269, 141);
+            this.magicalChest.Image = global::Adventure_book.Properties.Resources.magicalChest;
+            this.magicalChest.Location = new System.Drawing.Point(354, 129);
             this.magicalChest.Name = "magicalChest";
-            this.magicalChest.Size = new System.Drawing.Size(77, 77);
+            this.magicalChest.Size = new System.Drawing.Size(150, 150);
             this.magicalChest.TabIndex = 7;
             this.magicalChest.UseVisualStyleBackColor = false;
             // 
             // normalChest
             // 
-            this.normalChest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(56)))), ((int)(((byte)(255)))));
+            this.normalChest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.normalChest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.normalChest.ForeColor = System.Drawing.Color.White;
-            this.normalChest.Location = new System.Drawing.Point(186, 141);
+            this.normalChest.Image = global::Adventure_book.Properties.Resources.normalChest;
+            this.normalChest.Location = new System.Drawing.Point(73, 129);
             this.normalChest.Name = "normalChest";
-            this.normalChest.Size = new System.Drawing.Size(77, 77);
+            this.normalChest.Size = new System.Drawing.Size(150, 150);
             this.normalChest.TabIndex = 6;
             this.normalChest.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(56)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(12, 305);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 77);
-            this.button3.TabIndex = 6;
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(671, 414);
+            this.ClientSize = new System.Drawing.Size(671, 395);
             this.ControlBox = false;
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.settings);
             this.Controls.Add(this.character);
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.chestroom);
@@ -245,7 +252,7 @@ namespace Adventure_book
         private System.Windows.Forms.Button normalChest;
         private System.Windows.Forms.Label magicalChestLabel;
         private System.Windows.Forms.Label normalChestLabel;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button settings;
     }
 }
 

@@ -60,9 +60,11 @@ namespace Adventure_book
             chestroom.BackColor = pushed;
             calendar.BackColor = unpushed;
             character.BackColor = unpushed;
+            settings.BackColor = unpushed;
             character.Image = Properties.Resources.userBlack;
             calendar.Image = Properties.Resources.calendarBlack;
             chestroom.Image = Properties.Resources.chestWhite;
+            settings.Image = Properties.Resources.gearBlack;
 
         }
 
@@ -71,9 +73,11 @@ namespace Adventure_book
             chestroom.BackColor = unpushed;
             calendar.BackColor = pushed;
             character.BackColor = unpushed;
+            settings.BackColor = unpushed;
             character.Image = Properties.Resources.userBlack;
             calendar.Image = Properties.Resources.calendarWhite;
             chestroom.Image = Properties.Resources.chestBlack;
+            settings.Image = Properties.Resources.gearBlack;
         }
 
         private void character_Click(object sender, EventArgs e)
@@ -81,9 +85,11 @@ namespace Adventure_book
             chestroom.BackColor = unpushed;
             calendar.BackColor = unpushed;
             character.BackColor = pushed;
+            settings.BackColor = unpushed;
             character.Image = Properties.Resources.userWhite;
             calendar.Image = Properties.Resources.calendarBlack;
             chestroom.Image = Properties.Resources.chestBlack;
+            settings.Image = Properties.Resources.gearBlack;
         }
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -98,6 +104,19 @@ namespace Adventure_book
                 mousePose.Offset(mouseLocation.X, mouseLocation.Y);
                 Location = mousePose;
             }
+        }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+            chestroom.BackColor = unpushed;
+            calendar.BackColor = unpushed;
+            character.BackColor = unpushed;
+            settings.BackColor = pushed;
+            character.Image = Properties.Resources.userBlack;
+            calendar.Image = Properties.Resources.calendarBlack;
+            chestroom.Image = Properties.Resources.chestBlack;
+            settings.Image = Properties.Resources.gearWhite;
+
         }
     }
 }
