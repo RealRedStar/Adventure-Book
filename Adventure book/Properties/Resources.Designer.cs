@@ -83,6 +83,16 @@ namespace Adventure_book.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap calendarBlue {
+            get {
+                object obj = ResourceManager.GetObject("calendarBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap calendarWhite {
             get {
                 object obj = ResourceManager.GetObject("calendarWhite", resourceCulture);
@@ -96,6 +106,16 @@ namespace Adventure_book.Properties {
         public static System.Drawing.Bitmap chestBlack {
             get {
                 object obj = ResourceManager.GetObject("chestBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap chestBlue {
+            get {
+                object obj = ResourceManager.GetObject("chestBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +143,16 @@ namespace Adventure_book.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap gearBlue {
+            get {
+                object obj = ResourceManager.GetObject("gearBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap gearWhite {
             get {
                 object obj = ResourceManager.GetObject("gearWhite", resourceCulture);
@@ -143,6 +173,36 @@ namespace Adventure_book.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap magicalChestBig {
+            get {
+                object obj = ResourceManager.GetObject("magicalChestBig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap magicalChestBigClicked {
+            get {
+                object obj = ResourceManager.GetObject("magicalChestBigClicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap magicalChestBigMask {
+            get {
+                object obj = ResourceManager.GetObject("magicalChestBigMask", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap normalChest {
             get {
                 object obj = ResourceManager.GetObject("normalChest", resourceCulture);
@@ -153,9 +213,59 @@ namespace Adventure_book.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap normalChestBig {
+            get {
+                object obj = ResourceManager.GetObject("normalChestBig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap normalChestBigClicked {
+            get {
+                object obj = ResourceManager.GetObject("normalChestBigClicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap normalChestBigMask {
+            get {
+                object obj = ResourceManager.GetObject("normalChestBigMask", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap userBlack {
             get {
                 object obj = ResourceManager.GetObject("userBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap userBlue {
+            get {
+                object obj = ResourceManager.GetObject("userBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap userBlue1 {
+            get {
+                object obj = ResourceManager.GetObject("userBlue1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

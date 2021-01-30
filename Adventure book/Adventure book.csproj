@@ -154,5 +154,38 @@
   <ItemGroup>
     <None Include="Resources\magicalChest.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chestBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userBlue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gearBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magicalChestBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normalChestBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magicalChestBigClicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magicalChestBigMask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normalChestBigMask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normalChestBigClicked.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
