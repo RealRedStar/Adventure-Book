@@ -99,7 +99,5 @@ namespace Adventure_book
                 Location = mousePose;
             }
         }
-
-
     }
 }
