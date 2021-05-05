@@ -8,7 +8,7 @@ namespace Adventure_book
         /// <summary>
         /// Vyžaduje se proměnná návrháře.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Uvolněte všechny používané prostředky.
@@ -29,7 +29,7 @@ namespace Adventure_book
         /// Metoda vyžadovaná pro podporu Návrháře - neupravovat
         /// obsah této metody v editoru kódu.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -248,19 +248,19 @@ namespace Adventure_book
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button chestroom;
-        private System.Windows.Forms.Button calendar;
-        private System.Windows.Forms.Button character;
-        private System.Windows.Forms.Label magicalChestLabel;
-        private System.Windows.Forms.Label normalChestLabel;
-        private System.Windows.Forms.Button settings;
-        private System.Windows.Forms.PictureBox normalChest;
-        private System.Windows.Forms.PictureBox magicalChest;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button chestroom;
+        public System.Windows.Forms.Button calendar;
+        public System.Windows.Forms.Button character;
+        public System.Windows.Forms.Label magicalChestLabel;
+        public System.Windows.Forms.Label normalChestLabel;
+        public System.Windows.Forms.Button settings;
+        public System.Windows.Forms.PictureBox normalChest;
+        public System.Windows.Forms.PictureBox magicalChest;
     }
 }
 

@@ -74,15 +74,8 @@ namespace Adventure_book
 
         private void chestroom_Click(object sender, EventArgs e)
         {
-            chestroom.BackColor = pushed;
-            calendar.BackColor = unpushed;
-            character.BackColor = unpushed;
-            settings.BackColor = unpushed;
-            character.Image = Properties.Resources.userBlue;
-            calendar.Image = Properties.Resources.calendarBlue;
-            chestroom.Image = Properties.Resources.chestWhite;
-            settings.Image = Properties.Resources.gearBlue;
-
+            prvniStrana pr = new prvniStrana();
+            pr.activate(this);
             chestEnable();
 
 
@@ -90,31 +83,25 @@ namespace Adventure_book
 
         private void calendar_Click(object sender, EventArgs e)
         {
-            chestroom.BackColor = unpushed;
-            calendar.BackColor = pushed;
-            character.BackColor = unpushed;
-            settings.BackColor = unpushed;
-            character.Image = Properties.Resources.userBlue;
-            calendar.Image = Properties.Resources.calendarWhite;
-            chestroom.Image = Properties.Resources.chestBlue;
-            settings.Image = Properties.Resources.gearBlue;
-            normalChest.Visible = false;
+            druhaStrana dr = new druhaStrana();
+            dr.activate(this);
 
             chestDisable();
         }
 
         private void character_Click(object sender, EventArgs e)
         {
-            chestroom.BackColor = unpushed;
-            calendar.BackColor = unpushed;
-            character.BackColor = pushed;
-            settings.BackColor = unpushed;
-            character.Image = Properties.Resources.userWhite;
-            calendar.Image = Properties.Resources.calendarBlue;
-            chestroom.Image = Properties.Resources.chestBlue;
-            settings.Image = Properties.Resources.gearBlue;
+            tretiStrana tr = new tretiStrana();
+            tr.activate(this);
+            chestDisable();
+        }
+        private void settings_Click(object sender, EventArgs e)
+        {
+            ctvrtaStrana ct = new ctvrtaStrana();
+            ct.activate(this);
 
             chestDisable();
+
         }
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -131,20 +118,7 @@ namespace Adventure_book
             }
         }
 
-        private void settings_Click(object sender, EventArgs e)
-        {
-            chestroom.BackColor = unpushed;
-            calendar.BackColor = unpushed;
-            character.BackColor = unpushed;
-            settings.BackColor = pushed;
-            character.Image = Properties.Resources.userBlue;
-            calendar.Image = Properties.Resources.calendarBlue;
-            chestroom.Image = Properties.Resources.chestBlue;
-            settings.Image = Properties.Resources.gearWhite;
-
-            chestDisable();
-
-        }
+        
 
         private void normalChest_Click(object sender, EventArgs e)
         {
