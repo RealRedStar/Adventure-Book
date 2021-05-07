@@ -36,6 +36,7 @@ namespace Adventure_book
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.magicalChest = new System.Windows.Forms.PictureBox();
             this.normalChest = new System.Windows.Forms.PictureBox();
             this.magicalChestLabel = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@ namespace Adventure_book
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel2.Controls.Add(this.monthCalendar1);
             this.panel2.Controls.Add(this.magicalChest);
             this.panel2.Controls.Add(this.normalChest);
             this.panel2.Controls.Add(this.magicalChestLabel);
@@ -114,6 +116,12 @@ namespace Adventure_book
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(564, 326);
             this.panel2.TabIndex = 1;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(218, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 12;
             // 
             // magicalChest
             // 
@@ -124,6 +132,7 @@ namespace Adventure_book
             this.magicalChest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.magicalChest.TabIndex = 11;
             this.magicalChest.TabStop = false;
+            this.magicalChest.Click += new System.EventHandler(this.magicalChest_Click);
             this.magicalChest.MouseClick += new System.Windows.Forms.MouseEventHandler(this.magicalChest_Click);
             this.magicalChest.MouseDown += new System.Windows.Forms.MouseEventHandler(this.magicalChest_MouseDown);
             this.magicalChest.MouseMove += new System.Windows.Forms.MouseEventHandler(this.magicalChest_MouseMove);
@@ -261,6 +270,7 @@ namespace Adventure_book
         public System.Windows.Forms.Button settings;
         public System.Windows.Forms.PictureBox normalChest;
         public System.Windows.Forms.PictureBox magicalChest;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
 

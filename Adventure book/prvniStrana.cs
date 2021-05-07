@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Adventure_book
 {
-    class prvniStrana : Form1
+    class prvniStrana
     {
         Color unpushed = ColorTranslator.FromHtml("#252526");
         Color pushed = ColorTranslator.FromHtml("#007ACC");

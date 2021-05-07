@@ -278,5 +278,10 @@ namespace Adventure_book
                 }
             }
         }
+
+        private void magicalChest_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
