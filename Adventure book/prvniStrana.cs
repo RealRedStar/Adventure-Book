@@ -21,7 +21,7 @@ namespace Adventure_book
             form.calendar.Image = Properties.Resources.calendarBlue;
             form.chestroom.Image = Properties.Resources.chestWhite;
             form.settings.Image = Properties.Resources.gearBlue;
-            //Cus!!!
+            //lol
         }
     }
 }
