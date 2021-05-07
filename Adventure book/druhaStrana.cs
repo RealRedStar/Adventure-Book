@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adventure_book
+namespace Adventure_book 
 {
     class druhaStrana
     {
@@ -21,6 +21,7 @@ namespace Adventure_book
             form.calendar.Image = Properties.Resources.calendarWhite;
             form.chestroom.Image = Properties.Resources.chestBlue;
             form.settings.Image = Properties.Resources.gearBlue;
+            form.DataGrid.Visible = true;
         }
     }
 }

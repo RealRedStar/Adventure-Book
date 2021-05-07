@@ -36,7 +36,7 @@ namespace Adventure_book
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.DataGrid = new System.Windows.Forms.DataGridView();
             this.magicalChest = new System.Windows.Forms.PictureBox();
             this.normalChest = new System.Windows.Forms.PictureBox();
             this.magicalChestLabel = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@ namespace Adventure_book
             this.chestroom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normalChest)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +108,7 @@ namespace Adventure_book
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.panel2.Controls.Add(this.monthCalendar1);
+            this.panel2.Controls.Add(this.DataGrid);
             this.panel2.Controls.Add(this.magicalChest);
             this.panel2.Controls.Add(this.normalChest);
             this.panel2.Controls.Add(this.magicalChestLabel);
@@ -117,11 +118,20 @@ namespace Adventure_book
             this.panel2.Size = new System.Drawing.Size(564, 326);
             this.panel2.TabIndex = 1;
             // 
-            // monthCalendar1
+            // DataGrid
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(218, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 12;
+            this.DataGrid.AllowUserToAddRows = false;
+            this.DataGrid.AllowUserToDeleteRows = false;
+            this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DataGrid.Location = new System.Drawing.Point(13, 83);
+            this.DataGrid.Name = "DataGrid";
+            this.DataGrid.ReadOnly = true;
+            this.DataGrid.Size = new System.Drawing.Size(536, 231);
+            this.DataGrid.TabIndex = 12;
+            this.DataGrid.Visible = false;
+            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
             // 
             // magicalChest
             // 
@@ -249,6 +259,7 @@ namespace Adventure_book
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.normalChest)).EndInit();
             this.ResumeLayout(false);
@@ -270,7 +281,7 @@ namespace Adventure_book
         public System.Windows.Forms.Button settings;
         public System.Windows.Forms.PictureBox normalChest;
         public System.Windows.Forms.PictureBox magicalChest;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        public System.Windows.Forms.DataGridView DataGrid;
     }
 }
 
