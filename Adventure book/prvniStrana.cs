@@ -22,6 +22,8 @@ namespace Adventure_book
             form.chestroom.Image = Properties.Resources.chestWhite;
             form.settings.Image = Properties.Resources.gearBlue;
             //lol, olo
+
+            //Blbost!!!
         }
     }
 }
