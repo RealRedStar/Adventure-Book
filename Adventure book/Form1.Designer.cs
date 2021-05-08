@@ -35,21 +35,25 @@ namespace Adventure_book
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.DataGrid = new System.Windows.Forms.DataGridView();
+            this.menu1 = new System.Windows.Forms.Panel();
             this.magicalChest = new System.Windows.Forms.PictureBox();
             this.normalChest = new System.Windows.Forms.PictureBox();
             this.magicalChestLabel = new System.Windows.Forms.Label();
             this.normalChestLabel = new System.Windows.Forms.Label();
+            this.menu2 = new System.Windows.Forms.Panel();
+            this.DataGrid = new System.Windows.Forms.DataGridView();
             this.settings = new System.Windows.Forms.Button();
             this.character = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.Button();
             this.chestroom = new System.Windows.Forms.Button();
+            this.menu3 = new System.Windows.Forms.Panel();
+            this.menu4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
+            this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normalChest)).BeginInit();
+            this.menu2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,33 +109,17 @@ namespace Adventure_book
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
+            // menu1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.panel2.Controls.Add(this.DataGrid);
-            this.panel2.Controls.Add(this.magicalChest);
-            this.panel2.Controls.Add(this.normalChest);
-            this.panel2.Controls.Add(this.magicalChestLabel);
-            this.panel2.Controls.Add(this.normalChestLabel);
-            this.panel2.Location = new System.Drawing.Point(95, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(564, 326);
-            this.panel2.TabIndex = 1;
-            // 
-            // DataGrid
-            // 
-            this.DataGrid.AllowUserToAddRows = false;
-            this.DataGrid.AllowUserToDeleteRows = false;
-            this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DataGrid.Location = new System.Drawing.Point(13, 83);
-            this.DataGrid.Name = "DataGrid";
-            this.DataGrid.ReadOnly = true;
-            this.DataGrid.Size = new System.Drawing.Size(536, 231);
-            this.DataGrid.TabIndex = 12;
-            this.DataGrid.Visible = false;
-            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
+            this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu1.Controls.Add(this.magicalChest);
+            this.menu1.Controls.Add(this.normalChest);
+            this.menu1.Controls.Add(this.magicalChestLabel);
+            this.menu1.Controls.Add(this.normalChestLabel);
+            this.menu1.Location = new System.Drawing.Point(95, 56);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(564, 326);
+            this.menu1.TabIndex = 1;
             // 
             // magicalChest
             // 
@@ -186,6 +174,31 @@ namespace Adventure_book
             this.normalChestLabel.Text = "0";
             this.normalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // menu2
+            // 
+            this.menu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu2.Controls.Add(this.DataGrid);
+            this.menu2.Location = new System.Drawing.Point(95, 56);
+            this.menu2.Name = "menu2";
+            this.menu2.Size = new System.Drawing.Size(564, 326);
+            this.menu2.TabIndex = 14;
+            // 
+            // DataGrid
+            // 
+            this.DataGrid.AllowUserToAddRows = false;
+            this.DataGrid.AllowUserToDeleteRows = false;
+            this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DataGrid.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DataGrid.Location = new System.Drawing.Point(14, 83);
+            this.DataGrid.Name = "DataGrid";
+            this.DataGrid.ReadOnly = true;
+            this.DataGrid.Size = new System.Drawing.Size(536, 231);
+            this.DataGrid.TabIndex = 13;
+            this.DataGrid.Visible = false;
+            // 
             // settings
             // 
             this.settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
@@ -238,6 +251,22 @@ namespace Adventure_book
             this.chestroom.UseVisualStyleBackColor = false;
             this.chestroom.Click += new System.EventHandler(this.chestroom_Click);
             // 
+            // menu3
+            // 
+            this.menu3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu3.Location = new System.Drawing.Point(95, 56);
+            this.menu3.Name = "menu3";
+            this.menu3.Size = new System.Drawing.Size(564, 327);
+            this.menu3.TabIndex = 12;
+            // 
+            // menu4
+            // 
+            this.menu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu4.Location = new System.Drawing.Point(95, 56);
+            this.menu4.Name = "menu4";
+            this.menu4.Size = new System.Drawing.Size(564, 327);
+            this.menu4.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,19 +278,23 @@ namespace Adventure_book
             this.Controls.Add(this.character);
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.chestroom);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menu1);
+            this.Controls.Add(this.menu2);
+            this.Controls.Add(this.menu3);
+            this.Controls.Add(this.menu4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Opacity = 0.9D;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
+            this.menu1.ResumeLayout(false);
+            this.menu1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.normalChest)).EndInit();
+            this.menu2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,7 +302,7 @@ namespace Adventure_book
         #endregion
 
         public System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Panel menu1;
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label label1;
@@ -282,6 +315,9 @@ namespace Adventure_book
         public System.Windows.Forms.PictureBox normalChest;
         public System.Windows.Forms.PictureBox magicalChest;
         public System.Windows.Forms.DataGridView DataGrid;
+        private System.Windows.Forms.Panel menu2;
+        private System.Windows.Forms.Panel menu3;
+        private System.Windows.Forms.Panel menu4;
     }
 }
 

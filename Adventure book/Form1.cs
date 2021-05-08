@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Adventure_book
 {
@@ -16,22 +17,23 @@ namespace Adventure_book
 
         public Point mouseLocation;
 
-        public void chestEnable()
-        {
-            normalChest.Visible = true;
-            magicalChest.Visible = true;
+        // - Již staré metody
+        //public void chestEnable()
+        //{
+        //    normalChest.Visible = true;
+        //    magicalChest.Visible = true;
 
-            normalChestLabel.Visible = true;
-            magicalChestLabel.Visible = true;
-        }
-        public void chestDisable()
-        {
-            normalChest.Visible = false;
-            magicalChest.Visible = false;
+        //    normalChestLabel.Visible = true;
+        //    magicalChestLabel.Visible = true;
+        //}
+        //public void chestDisable()
+        //{
+        //    normalChest.Visible = false;
+        //    magicalChest.Visible = false;
 
-            normalChestLabel.Visible = false;
-            magicalChestLabel.Visible = false;
-        }
+        //    normalChestLabel.Visible = false;
+        //    magicalChestLabel.Visible = false;
+        //}
 
         Color unpushed = ColorTranslator.FromHtml("#252526");
         Color pushed = ColorTranslator.FromHtml("#007ACC");
@@ -40,6 +42,15 @@ namespace Adventure_book
             InitializeComponent();
             chestroom.BackColor = pushed;
             chestroom.Image = Properties.Resources.chestWhite;
+            menu1.Visible = true;
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Název", typeof(String));
+            table.Columns.Add("Info", typeof(String));
+            table.Columns.Add("Datum", typeof(int));
+            DataGrid.DataSource = table;
+            DataGrid.Visible = true;
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -76,7 +87,10 @@ namespace Adventure_book
         {
             prvniStrana pr = new prvniStrana();
             pr.activate(this);
-            chestEnable();
+            menu1.Visible = true;
+            menu2.Visible = false;
+            menu3.Visible = false;
+            menu4.Visible = false;
 
 
         }
@@ -85,22 +99,29 @@ namespace Adventure_book
         {
             druhaStrana dr = new druhaStrana();
             dr.activate(this);
-
-            chestDisable();
+            menu1.Visible = false;
+            menu2.Visible = true;
+            menu3.Visible = false;
+            menu4.Visible = false;
         }
 
         private void character_Click(object sender, EventArgs e)
         {
             tretiStrana tr = new tretiStrana();
             tr.activate(this);
-            chestDisable();
+            menu1.Visible = false;
+            menu2.Visible = false;
+            menu3.Visible = true;
+            menu4.Visible = false;
         }
         private void settings_Click(object sender, EventArgs e)
         {
             ctvrtaStrana ct = new ctvrtaStrana();
             ct.activate(this);
-
-            chestDisable();
+            menu1.Visible = false;
+            menu2.Visible = false;
+            menu3.Visible = false;
+            menu4.Visible = true;
 
         }
         private void label1_MouseDown(object sender, MouseEventArgs e)
@@ -285,6 +306,11 @@ namespace Adventure_book
         }
 
         private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void menu2_Paint(object sender, PaintEventArgs e)
         {
 
         }

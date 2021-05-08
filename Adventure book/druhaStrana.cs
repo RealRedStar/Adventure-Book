@@ -21,7 +21,6 @@ namespace Adventure_book
             form.calendar.Image = Properties.Resources.calendarWhite;
             form.chestroom.Image = Properties.Resources.chestBlue;
             form.settings.Image = Properties.Resources.gearBlue;
-            form.DataGrid.Visible = true;
         }
     }
 }
