@@ -15,11 +15,16 @@ namespace Adventure_book
             {
                 Directory.CreateDirectory(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB");
                 File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt");
+                File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt");
             } else
             {
                 if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt"))
                 {
                     File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt");
+                }
+                if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt"))
+                {
+                    File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt");
                 }
             }
         }
