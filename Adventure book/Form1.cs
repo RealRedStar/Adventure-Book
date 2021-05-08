@@ -37,6 +37,7 @@ namespace Adventure_book
 
         Color unpushed = ColorTranslator.FromHtml("#252526");
         Color pushed = ColorTranslator.FromHtml("#007ACC");
+        MainDirectory mn = new MainDirectory();
         public Form1()
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace Adventure_book
             table.Columns.Add("Datum", typeof(int));
             DataGrid.DataSource = table;
             DataGrid.Visible = true;
+            mn.Exist();
             
         }
 
@@ -313,6 +315,12 @@ namespace Adventure_book
         private void menu2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void AddHomework_Click(object sender, EventArgs e)
+        {
+            AddDialog dialog = new AddDialog();
+            dialog.ShowDialog();
         }
     }
 }

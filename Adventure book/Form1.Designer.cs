@@ -41,6 +41,7 @@ namespace Adventure_book
             this.magicalChestLabel = new System.Windows.Forms.Label();
             this.normalChestLabel = new System.Windows.Forms.Label();
             this.menu2 = new System.Windows.Forms.Panel();
+            this.AddHomework = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
             this.settings = new System.Windows.Forms.Button();
             this.character = new System.Windows.Forms.Button();
@@ -177,11 +178,25 @@ namespace Adventure_book
             // menu2
             // 
             this.menu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu2.Controls.Add(this.AddHomework);
             this.menu2.Controls.Add(this.DataGrid);
             this.menu2.Location = new System.Drawing.Point(95, 56);
             this.menu2.Name = "menu2";
             this.menu2.Size = new System.Drawing.Size(564, 326);
             this.menu2.TabIndex = 14;
+            // 
+            // AddHomework
+            // 
+            this.AddHomework.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.AddHomework.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddHomework.ForeColor = System.Drawing.Color.White;
+            this.AddHomework.Location = new System.Drawing.Point(518, 45);
+            this.AddHomework.Name = "AddHomework";
+            this.AddHomework.Size = new System.Drawing.Size(32, 32);
+            this.AddHomework.TabIndex = 3;
+            this.AddHomework.Text = "+";
+            this.AddHomework.UseVisualStyleBackColor = false;
+            this.AddHomework.Click += new System.EventHandler(this.AddHomework_Click);
             // 
             // DataGrid
             // 
@@ -189,6 +204,7 @@ namespace Adventure_book
             this.DataGrid.AllowUserToDeleteRows = false;
             this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DataGrid.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -318,6 +334,7 @@ namespace Adventure_book
         private System.Windows.Forms.Panel menu2;
         private System.Windows.Forms.Panel menu3;
         private System.Windows.Forms.Panel menu4;
+        public System.Windows.Forms.Button AddHomework;
     }
 }
 
