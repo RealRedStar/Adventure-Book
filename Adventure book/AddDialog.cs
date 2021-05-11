@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,15 @@ namespace Adventure_book
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
+            int ID = File.ReadLines(path).Count() + 1;
+            string line = ID + ";" + InTaskName.Text + ";" + InTaskDescription.Text + ";" + dateTimePicker1.Value + ";";
+            using (StreamWriter writer = File.AppendText(path))
+            {
+                writer.WriteLine(line);
+            }
+            
 
         }
 

@@ -49,6 +49,20 @@ namespace Adventure_book
             table.Columns.Add("Název", typeof(String));
             table.Columns.Add("Info", typeof(String));
             table.Columns.Add("Datum", typeof(int));
+            string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
+            using (StreamReader streamReader = new StreamReader(path))
+            {
+                for (int i = 0; i < File.ReadLines(path).Count(); i++)
+                {
+                    string line = streamReader.ReadLine();
+                    for (int j = 0; j < 5; j++)
+                    {
+                       DataRow row = table.NewRow();
+                        int found = line.IndexOf(";");
+                        row[j] = line.Substring(found);
+                    }
+                }
+            }
             DataGrid.DataSource = table;
             DataGrid.Visible = true;
             mn.Exist();
@@ -309,7 +323,7 @@ namespace Adventure_book
 
         private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void menu2_Paint(object sender, PaintEventArgs e)
