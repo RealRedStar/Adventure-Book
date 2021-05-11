@@ -93,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="prvniStrana.cs" />
     <Compile Include="tretiStrana.cs" />
+    <EmbeddedResource Include="AddDialog.resx">
+      <DependentUpon>AddDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
