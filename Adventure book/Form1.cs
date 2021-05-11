@@ -59,7 +59,7 @@ namespace Adventure_book
                     {
                        DataRow row = table.NewRow();
                         int found = line.IndexOf(";");
-                        row[j] = line.Substring(found);
+                        //row[j] = line.Substring(found); chyba
                     }
                 }
             }
