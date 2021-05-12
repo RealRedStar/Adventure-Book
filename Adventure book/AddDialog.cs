@@ -38,6 +38,7 @@ namespace Adventure_book
 
         }
 
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -48,7 +49,8 @@ namespace Adventure_book
             {
                 writer.WriteLine(line);
             }
-            
+            Form1 form = new Form1();
+            this.Close();
 
         }
 

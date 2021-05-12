@@ -41,32 +41,39 @@ namespace Adventure_book
         public Form1()
         {
             InitializeComponent();
+
             chestroom.BackColor = pushed;
             chestroom.Image = Properties.Resources.chestWhite;
+            AddDialog addDialog = new AddDialog();
+            DataToTable();
             menu1.Visible = true;
+            mn.Exist();
+            
+        }
+        public void DataToTable()
+        {
             DataTable table = new DataTable();
-            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("ID", typeof(String));
             table.Columns.Add("Název", typeof(String));
             table.Columns.Add("Info", typeof(String));
-            table.Columns.Add("Datum", typeof(int));
+            table.Columns.Add("Datum", typeof(String));
             string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
             using (StreamReader streamReader = new StreamReader(path))
             {
                 for (int i = 0; i < File.ReadLines(path).Count(); i++)
                 {
+                    DataRow row = table.NewRow();
                     string line = streamReader.ReadLine();
-                    for (int j = 0; j < 5; j++)
+                    string[] lines = line.Split(';');
+                    for (int j = 0; j < 4; j++)
                     {
-                       DataRow row = table.NewRow();
-                        int found = line.IndexOf(";");
-                        //row[j] = line.Substring(found); chyba
+                        row[j] = lines[j];
                     }
+                    table.Rows.Add(row[0], row[1], row[2], row[3]);
                 }
             }
             DataGrid.DataSource = table;
             DataGrid.Visible = true;
-            mn.Exist();
-            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -335,6 +342,7 @@ namespace Adventure_book
         {
             AddDialog dialog = new AddDialog();
             dialog.ShowDialog();
+            DataToTable();
         }
     }
 }
