@@ -73,5 +73,10 @@ namespace Adventure_book
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
