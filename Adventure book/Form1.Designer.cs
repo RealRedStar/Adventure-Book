@@ -49,6 +49,7 @@ namespace Adventure_book
             this.chestroom = new System.Windows.Forms.Button();
             this.menu3 = new System.Windows.Forms.Panel();
             this.menu4 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
@@ -178,6 +179,7 @@ namespace Adventure_book
             // menu2
             // 
             this.menu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu2.Controls.Add(this.button3);
             this.menu2.Controls.Add(this.AddHomework);
             this.menu2.Controls.Add(this.DataGrid);
             this.menu2.Location = new System.Drawing.Point(95, 56);
@@ -283,6 +285,19 @@ namespace Adventure_book
             this.menu4.Size = new System.Drawing.Size(564, 327);
             this.menu4.TabIndex = 13;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(480, 45);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(32, 32);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "x";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,10 +310,10 @@ namespace Adventure_book
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.chestroom);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menu1);
             this.Controls.Add(this.menu2);
             this.Controls.Add(this.menu3);
             this.Controls.Add(this.menu4);
+            this.Controls.Add(this.menu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Opacity = 0.9D;
@@ -335,6 +350,7 @@ namespace Adventure_book
         private System.Windows.Forms.Panel menu3;
         private System.Windows.Forms.Panel menu4;
         public System.Windows.Forms.Button AddHomework;
+        public System.Windows.Forms.Button button3;
     }
 }
 

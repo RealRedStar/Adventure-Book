@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections;
 
 namespace Adventure_book
 {
@@ -38,6 +39,7 @@ namespace Adventure_book
         Color unpushed = ColorTranslator.FromHtml("#252526");
         Color pushed = ColorTranslator.FromHtml("#007ACC");
         MainDirectory mn = new MainDirectory();
+        string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
         public Form1()
         {
             InitializeComponent();
@@ -57,7 +59,6 @@ namespace Adventure_book
             table.Columns.Add("Název", typeof(String));
             table.Columns.Add("Info", typeof(String));
             table.Columns.Add("Datum", typeof(String));
-            string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
             using (StreamReader streamReader = new StreamReader(path))
             {
                 for (int i = 0; i < File.ReadLines(path).Count(); i++)
@@ -344,5 +345,40 @@ namespace Adventure_book
             dialog.ShowDialog();
             DataToTable();
         }
-    }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ArrayList text = new ArrayList();
+            try
+            {
+                int index = DataGrid.CurrentCell.RowIndex;
+                using (StreamReader streamReader = new StreamReader(path))
+                {
+                    for (int i = 0; i < File.ReadLines(path).Count(); i++)
+                    {
+                        text.Add(streamReader.ReadLine());
+                    }
+                }
+                File.Delete(path);
+
+                using (StreamWriter writer = File.AppendText(path))
+                {
+                    for (int i = 0; i < text.Count; i++)
+                    {
+                        if (i != index)
+                        {
+                            writer.WriteLine(text[i]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
+            }
+
+            DataToTable();
+        }
+
+        }
 }
