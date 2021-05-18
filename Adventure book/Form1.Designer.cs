@@ -41,6 +41,7 @@ namespace Adventure_book
             this.magicalChestLabel = new System.Windows.Forms.Label();
             this.normalChestLabel = new System.Windows.Forms.Label();
             this.menu2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.AddHomework = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
             this.settings = new System.Windows.Forms.Button();
@@ -49,7 +50,8 @@ namespace Adventure_book
             this.chestroom = new System.Windows.Forms.Button();
             this.menu3 = new System.Windows.Forms.Panel();
             this.menu4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtCoins = new System.Windows.Forms.Label();
+            this.Coins = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
@@ -114,6 +116,8 @@ namespace Adventure_book
             // menu1
             // 
             this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu1.Controls.Add(this.Coins);
+            this.menu1.Controls.Add(this.txtCoins);
             this.menu1.Controls.Add(this.magicalChest);
             this.menu1.Controls.Add(this.normalChest);
             this.menu1.Controls.Add(this.magicalChestLabel);
@@ -163,6 +167,7 @@ namespace Adventure_book
             this.magicalChestLabel.TabIndex = 9;
             this.magicalChestLabel.Text = "1";
             this.magicalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.magicalChestLabel.Click += new System.EventHandler(this.magicalChestLabel_Click);
             // 
             // normalChestLabel
             // 
@@ -173,8 +178,9 @@ namespace Adventure_book
             this.normalChestLabel.Name = "normalChestLabel";
             this.normalChestLabel.Size = new System.Drawing.Size(18, 20);
             this.normalChestLabel.TabIndex = 8;
-            this.normalChestLabel.Text = "0";
+            this.normalChestLabel.Text = "5";
             this.normalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.normalChestLabel.Click += new System.EventHandler(this.normalChestLabel_Click);
             // 
             // menu2
             // 
@@ -186,6 +192,19 @@ namespace Adventure_book
             this.menu2.Name = "menu2";
             this.menu2.Size = new System.Drawing.Size(564, 326);
             this.menu2.TabIndex = 14;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(480, 45);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(32, 32);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "x";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // AddHomework
             // 
@@ -216,6 +235,7 @@ namespace Adventure_book
             this.DataGrid.Size = new System.Drawing.Size(536, 231);
             this.DataGrid.TabIndex = 13;
             this.DataGrid.Visible = false;
+            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick_1);
             // 
             // settings
             // 
@@ -285,18 +305,26 @@ namespace Adventure_book
             this.menu4.Size = new System.Drawing.Size(564, 327);
             this.menu4.TabIndex = 13;
             // 
-            // button3
+            // txtCoins
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(480, 45);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 32);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "x";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.txtCoins.AutoSize = true;
+            this.txtCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtCoins.ForeColor = System.Drawing.Color.White;
+            this.txtCoins.Location = new System.Drawing.Point(347, 0);
+            this.txtCoins.Name = "txtCoins";
+            this.txtCoins.Size = new System.Drawing.Size(53, 20);
+            this.txtCoins.TabIndex = 12;
+            this.txtCoins.Text = "Coins:";
+            this.txtCoins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Coins
+            // 
+            this.Coins.Location = new System.Drawing.Point(406, 0);
+            this.Coins.Name = "Coins";
+            this.Coins.ReadOnly = true;
+            this.Coins.Size = new System.Drawing.Size(100, 20);
+            this.Coins.TabIndex = 13;
+            this.Coins.TextChanged += new System.EventHandler(this.Coins_TextChanged);
             // 
             // Form1
             // 
@@ -310,10 +338,10 @@ namespace Adventure_book
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.chestroom);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menu1);
             this.Controls.Add(this.menu2);
             this.Controls.Add(this.menu3);
             this.Controls.Add(this.menu4);
-            this.Controls.Add(this.menu1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Opacity = 0.9D;
@@ -351,6 +379,8 @@ namespace Adventure_book
         private System.Windows.Forms.Panel menu4;
         public System.Windows.Forms.Button AddHomework;
         public System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox Coins;
+        public System.Windows.Forms.Label txtCoins;
     }
 }
 
