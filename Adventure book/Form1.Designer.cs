@@ -54,6 +54,7 @@ namespace Adventure_book
             this.menu4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.whiteMode = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
@@ -324,6 +325,7 @@ namespace Adventure_book
             // menu4
             // 
             this.menu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu4.Controls.Add(this.label4);
             this.menu4.Controls.Add(this.whiteMode);
             this.menu4.Controls.Add(this.label2);
             this.menu4.Location = new System.Drawing.Point(95, 56);
@@ -346,13 +348,25 @@ namespace Adventure_book
             // whiteMode
             // 
             this.whiteMode.AutoSize = true;
-            this.whiteMode.Location = new System.Drawing.Point(268, 128);
+            this.whiteMode.Location = new System.Drawing.Point(142, 61);
             this.whiteMode.Name = "whiteMode";
             this.whiteMode.Size = new System.Drawing.Size(29, 17);
             this.whiteMode.TabIndex = 4;
             this.whiteMode.Text = " ";
             this.whiteMode.UseVisualStyleBackColor = true;
             this.whiteMode.CheckedChanged += new System.EventHandler(this.whiteMode_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(10, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "White Mode:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -366,10 +380,10 @@ namespace Adventure_book
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.chestroom);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menu4);
             this.Controls.Add(this.menu1);
             this.Controls.Add(this.menu2);
             this.Controls.Add(this.menu3);
-            this.Controls.Add(this.menu4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Opacity = 0.9D;
@@ -413,6 +427,7 @@ namespace Adventure_book
         public System.Windows.Forms.Label txtCoins;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox whiteMode;
+        public System.Windows.Forms.Label label4;
     }
 }
 

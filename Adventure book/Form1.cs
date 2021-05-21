@@ -441,10 +441,19 @@ namespace Adventure_book
                 panel1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
                 label1.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
                 label2.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                label4.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
                 txtCoins.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
                 normalChestLabel.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
                 magicalChestLabel.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
                 BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                AddHomework.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                AddHomework.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                button3.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                button3.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                button2.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                button2.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                button1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                button1.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             }
             else
             {
@@ -455,10 +464,19 @@ namespace Adventure_book
                 panel1.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
                 label1.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
                 label2.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                label4.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
                 txtCoins.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
                 normalChestLabel.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
                 magicalChestLabel.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
                 BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+                AddHomework.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                AddHomework.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                button1.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                button1.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                button2.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                button2.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                button3.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                button3.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
             }
         }
     }
