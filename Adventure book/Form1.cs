@@ -424,5 +424,42 @@ namespace Adventure_book
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void whiteMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (whiteMode.Checked)
+            {
+                menu1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                menu2.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                menu3.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                menu4.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                panel1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                label1.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                label2.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                txtCoins.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                normalChestLabel.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                magicalChestLabel.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                menu1.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                menu2.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                menu3.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                menu4.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                panel1.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
+                label1.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                label2.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                txtCoins.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                normalChestLabel.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                magicalChestLabel.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            }
+        }
     }
 }

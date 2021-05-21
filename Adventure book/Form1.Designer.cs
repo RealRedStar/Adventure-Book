@@ -36,6 +36,8 @@ namespace Adventure_book
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.menu1 = new System.Windows.Forms.Panel();
+            this.Coins = new System.Windows.Forms.TextBox();
+            this.txtCoins = new System.Windows.Forms.Label();
             this.magicalChest = new System.Windows.Forms.PictureBox();
             this.normalChest = new System.Windows.Forms.PictureBox();
             this.magicalChestLabel = new System.Windows.Forms.Label();
@@ -50,14 +52,15 @@ namespace Adventure_book
             this.chestroom = new System.Windows.Forms.Button();
             this.menu3 = new System.Windows.Forms.Panel();
             this.menu4 = new System.Windows.Forms.Panel();
-            this.txtCoins = new System.Windows.Forms.Label();
-            this.Coins = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.whiteMode = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normalChest)).BeginInit();
             this.menu2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
+            this.menu4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,6 +129,27 @@ namespace Adventure_book
             this.menu1.Name = "menu1";
             this.menu1.Size = new System.Drawing.Size(564, 326);
             this.menu1.TabIndex = 1;
+            // 
+            // Coins
+            // 
+            this.Coins.Location = new System.Drawing.Point(406, 0);
+            this.Coins.Name = "Coins";
+            this.Coins.ReadOnly = true;
+            this.Coins.Size = new System.Drawing.Size(100, 20);
+            this.Coins.TabIndex = 13;
+            this.Coins.TextChanged += new System.EventHandler(this.Coins_TextChanged);
+            // 
+            // txtCoins
+            // 
+            this.txtCoins.AutoSize = true;
+            this.txtCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtCoins.ForeColor = System.Drawing.Color.White;
+            this.txtCoins.Location = new System.Drawing.Point(347, 0);
+            this.txtCoins.Name = "txtCoins";
+            this.txtCoins.Size = new System.Drawing.Size(53, 20);
+            this.txtCoins.TabIndex = 12;
+            this.txtCoins.Text = "Coins:";
+            this.txtCoins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // magicalChest
             // 
@@ -300,31 +324,35 @@ namespace Adventure_book
             // menu4
             // 
             this.menu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu4.Controls.Add(this.whiteMode);
+            this.menu4.Controls.Add(this.label2);
             this.menu4.Location = new System.Drawing.Point(95, 56);
             this.menu4.Name = "menu4";
             this.menu4.Size = new System.Drawing.Size(564, 327);
             this.menu4.TabIndex = 13;
             // 
-            // txtCoins
+            // label2
             // 
-            this.txtCoins.AutoSize = true;
-            this.txtCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtCoins.ForeColor = System.Drawing.Color.White;
-            this.txtCoins.Location = new System.Drawing.Point(347, 0);
-            this.txtCoins.Name = "txtCoins";
-            this.txtCoins.Size = new System.Drawing.Size(53, 20);
-            this.txtCoins.TabIndex = 12;
-            this.txtCoins.Text = "Coins:";
-            this.txtCoins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 31);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Settings";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Coins
+            // whiteMode
             // 
-            this.Coins.Location = new System.Drawing.Point(406, 0);
-            this.Coins.Name = "Coins";
-            this.Coins.ReadOnly = true;
-            this.Coins.Size = new System.Drawing.Size(100, 20);
-            this.Coins.TabIndex = 13;
-            this.Coins.TextChanged += new System.EventHandler(this.Coins_TextChanged);
+            this.whiteMode.AutoSize = true;
+            this.whiteMode.Location = new System.Drawing.Point(268, 128);
+            this.whiteMode.Name = "whiteMode";
+            this.whiteMode.Size = new System.Drawing.Size(29, 17);
+            this.whiteMode.TabIndex = 4;
+            this.whiteMode.Text = " ";
+            this.whiteMode.UseVisualStyleBackColor = true;
+            this.whiteMode.CheckedChanged += new System.EventHandler(this.whiteMode_CheckedChanged);
             // 
             // Form1
             // 
@@ -354,6 +382,8 @@ namespace Adventure_book
             ((System.ComponentModel.ISupportInitialize)(this.normalChest)).EndInit();
             this.menu2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
+            this.menu4.ResumeLayout(false);
+            this.menu4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -381,6 +411,8 @@ namespace Adventure_book
         public System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox Coins;
         public System.Windows.Forms.Label txtCoins;
+        public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox whiteMode;
     }
 }
 
