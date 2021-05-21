@@ -454,6 +454,7 @@ namespace Adventure_book
                 button2.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
                 button1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
                 button1.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                chestroom.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
             }
             else
             {

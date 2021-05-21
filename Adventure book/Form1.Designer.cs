@@ -380,10 +380,10 @@ namespace Adventure_book
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.chestroom);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menu4);
             this.Controls.Add(this.menu1);
             this.Controls.Add(this.menu2);
             this.Controls.Add(this.menu3);
+            this.Controls.Add(this.menu4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Opacity = 0.9D;
