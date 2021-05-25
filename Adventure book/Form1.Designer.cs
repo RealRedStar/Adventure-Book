@@ -52,9 +52,9 @@ namespace Adventure_book
             this.chestroom = new System.Windows.Forms.Button();
             this.menu3 = new System.Windows.Forms.Panel();
             this.menu4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.whiteMode = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.whiteMode = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
@@ -133,7 +133,7 @@ namespace Adventure_book
             // 
             // Coins
             // 
-            this.Coins.Location = new System.Drawing.Point(406, 0);
+            this.Coins.Location = new System.Drawing.Point(406, 11);
             this.Coins.Name = "Coins";
             this.Coins.ReadOnly = true;
             this.Coins.Size = new System.Drawing.Size(100, 20);
@@ -145,7 +145,7 @@ namespace Adventure_book
             this.txtCoins.AutoSize = true;
             this.txtCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtCoins.ForeColor = System.Drawing.Color.White;
-            this.txtCoins.Location = new System.Drawing.Point(347, 0);
+            this.txtCoins.Location = new System.Drawing.Point(347, 10);
             this.txtCoins.Name = "txtCoins";
             this.txtCoins.Size = new System.Drawing.Size(53, 20);
             this.txtCoins.TabIndex = 12;
@@ -333,17 +333,17 @@ namespace Adventure_book
             this.menu4.Size = new System.Drawing.Size(564, 327);
             this.menu4.TabIndex = 13;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Settings";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(10, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "White Mode:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // whiteMode
             // 
@@ -356,17 +356,17 @@ namespace Adventure_book
             this.whiteMode.UseVisualStyleBackColor = true;
             this.whiteMode.CheckedChanged += new System.EventHandler(this.whiteMode_CheckedChanged);
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(10, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "White Mode:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(8, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 31);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Settings";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 

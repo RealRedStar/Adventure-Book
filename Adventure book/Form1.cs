@@ -36,8 +36,8 @@ namespace Adventure_book
         //    magicalChestLabel.Visible = false;
         //}
 
-        Color unpushed = ColorTranslator.FromHtml("#252526");
-        Color pushed = ColorTranslator.FromHtml("#007ACC");
+        public Color unpushed = ColorTranslator.FromHtml("#252526");
+        public Color pushed = ColorTranslator.FromHtml("#007ACC");
         MainDirectory mn = new MainDirectory();
         string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
         int CoinsOwned = 0;
@@ -434,50 +434,58 @@ namespace Adventure_book
         {
             if (whiteMode.Checked)
             {
-                menu1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                menu2.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                menu3.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                menu4.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                panel1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                label1.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                label2.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                label4.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                txtCoins.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                normalChestLabel.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                magicalChestLabel.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                AddHomework.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                AddHomework.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                button3.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                button3.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                button2.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                button2.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                button1.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
-                button1.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                chestroom.BackColor = System.Drawing.Color.FromArgb(200, 200, 200);
+                unpushed = ColorTranslator.FromHtml("#E8E8E8");
+                menu1.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                menu2.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                menu3.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                menu4.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                panel1.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                label1.ForeColor = ColorTranslator.FromHtml("#000000");
+                label2.ForeColor = ColorTranslator.FromHtml("#000000");
+                label4.ForeColor = ColorTranslator.FromHtml("#000000");
+                txtCoins.ForeColor = ColorTranslator.FromHtml("#000000");
+                normalChestLabel.ForeColor = ColorTranslator.FromHtml("#000000");
+                magicalChestLabel.ForeColor = ColorTranslator.FromHtml("#000000");
+                BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                AddHomework.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                AddHomework.ForeColor = ColorTranslator.FromHtml("#000000");
+                button3.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button3.ForeColor = ColorTranslator.FromHtml("#000000");
+                button2.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button2.ForeColor = ColorTranslator.FromHtml("#000000");
+                button1.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button1.ForeColor = ColorTranslator.FromHtml("#000000");
+                chestroom.BackColor = unpushed;
+                calendar.BackColor = unpushed;
+                character.BackColor = unpushed;
             }
             else
             {
-                menu1.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                menu2.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                menu3.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                menu4.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                panel1.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                label1.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                label2.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                label4.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                txtCoins.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                normalChestLabel.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                magicalChestLabel.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                unpushed = ColorTranslator.FromHtml("#252526");
+                menu1.BackColor = ColorTranslator.FromHtml("#242425");
+                menu2.BackColor = ColorTranslator.FromHtml("#242425");
+                menu3.BackColor = ColorTranslator.FromHtml("#242425");
+                menu4.BackColor = ColorTranslator.FromHtml("#242425");
+                panel1.BackColor = ColorTranslator.FromHtml("#242425");
+                label1.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                label2.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                label4.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                txtCoins.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                normalChestLabel.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                magicalChestLabel.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
-                AddHomework.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                AddHomework.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                button1.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                button1.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                button2.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                button2.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-                button3.BackColor = System.Drawing.Color.FromArgb(37, 37, 38);
-                button3.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
+                AddHomework.BackColor = ColorTranslator.FromHtml("#242425");
+                AddHomework.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                button1.BackColor = ColorTranslator.FromHtml("#242425");
+                button1.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                button2.BackColor = ColorTranslator.FromHtml("#242425");
+                button2.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                button3.BackColor = ColorTranslator.FromHtml("#242425");
+                button3.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                chestroom.BackColor = unpushed;
+                calendar.BackColor = unpushed;
+                character.BackColor = unpushed;
+
             }
         }
     }

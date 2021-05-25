@@ -9,14 +9,13 @@ namespace Adventure_book
 {
     class tretiStrana
     {
-        Color unpushed = ColorTranslator.FromHtml("#252526");
-        Color pushed = ColorTranslator.FromHtml("#007ACC");
+
         public void activate(Form1 form)
         {
-            form.chestroom.BackColor = unpushed;
-            form.calendar.BackColor = unpushed;
-            form.character.BackColor = pushed;
-            form.settings.BackColor = unpushed;
+            form.chestroom.BackColor = form.unpushed;
+            form.calendar.BackColor = form.unpushed;
+            form.character.BackColor = form.pushed;
+            form.settings.BackColor = form.unpushed;
             form.character.Image = Properties.Resources.userWhite;
             form.calendar.Image = Properties.Resources.calendarBlue;
             form.chestroom.Image = Properties.Resources.chestBlue;
