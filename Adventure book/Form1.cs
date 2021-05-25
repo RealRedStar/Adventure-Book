@@ -41,13 +41,14 @@ namespace Adventure_book
         MainDirectory mn = new MainDirectory();
         string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
         int CoinsOwned = 0;
+        Boolean lightMode = false;
         public Form1()
         {
             InitializeComponent();
 
             chestroom.BackColor = pushed;
             chestroom.Image = Properties.Resources.chestWhite;
-            AddDialog addDialog = new AddDialog();
+            AddDialog addDialog = new AddDialog(lightMode);
             DataToTable();
             menu1.Visible = true;
             mn.Exist();
@@ -366,7 +367,7 @@ namespace Adventure_book
 
         private void AddHomework_Click(object sender, EventArgs e)
         {
-            AddDialog dialog = new AddDialog();
+            AddDialog dialog = new AddDialog(lightMode);
             dialog.ShowDialog();
             DataToTable();
         }
@@ -458,6 +459,7 @@ namespace Adventure_book
                 chestroom.BackColor = unpushed;
                 calendar.BackColor = unpushed;
                 character.BackColor = unpushed;
+                lightMode = true;
             }
             else
             {
@@ -485,6 +487,7 @@ namespace Adventure_book
                 chestroom.BackColor = unpushed;
                 calendar.BackColor = unpushed;
                 character.BackColor = unpushed;
+                lightMode = false;
 
             }
         }

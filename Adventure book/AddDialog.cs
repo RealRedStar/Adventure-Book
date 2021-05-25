@@ -14,9 +14,31 @@ namespace Adventure_book
     public partial class AddDialog : Form
     {
         public Point mouseLocation;
-        public AddDialog()
+        public AddDialog(Boolean lightMode)
         {
             InitializeComponent();
+            if (lightMode)
+            {
+                button1.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button1.ForeColor = ColorTranslator.FromHtml("#000000");
+                button2.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button2.ForeColor = ColorTranslator.FromHtml("#000000");
+                button3.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button3.ForeColor = ColorTranslator.FromHtml("#000000");
+                button4.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button4.ForeColor = ColorTranslator.FromHtml("#000000");
+                BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                TaskName.ForeColor = ColorTranslator.FromHtml("#000000");
+                TaskName.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                Title.ForeColor = ColorTranslator.FromHtml("#000000");
+                Title.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                TaskDeadline.ForeColor = ColorTranslator.FromHtml("#000000");
+                TaskDeadline.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                TaskDescription.ForeColor = ColorTranslator.FromHtml("#000000");
+                TaskDescription.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                TitleBar.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                panel1.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
