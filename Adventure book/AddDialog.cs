@@ -14,6 +14,11 @@ namespace Adventure_book
     public partial class AddDialog : Form
     {
         public Point mouseLocation;
+        int mouseX = 0;
+        int mouseY = 0;
+        int mouseinX;
+        int mouseinY; 
+        Boolean mouseDown;
         public AddDialog(Boolean lightMode)
         {
             InitializeComponent();
@@ -107,19 +112,47 @@ namespace Adventure_book
 
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void TitleBar_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseLocation = new Point(-e.X, -e.Y);
+            mouseinX = MousePosition.X - Bounds.X;
+            mouseinY = MousePosition.Y - Bounds.Y;
+            mouseDown = true;
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        private void TitleBar_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (mouseDown)
             {
-                Point mousePose = Control.MousePosition;
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
-                Location = mousePose;
+                mouseX = MousePosition.X - mouseinX;
+                mouseY = MousePosition.Y - mouseinY;
+
+                this.SetDesktopLocation(mouseX, mouseY);
             }
+        }
+
+        private void TitleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+        private void Title_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseinX = MousePosition.X - Bounds.X;
+            mouseinY = MousePosition.Y - Bounds.Y;
+            mouseDown = true;
+        }
+
+        private void Title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                mouseX = MousePosition.X - mouseinX;
+                mouseY = MousePosition.Y - mouseinY;
+                this.SetDesktopLocation(mouseX, mouseY);
+            }
+        }
+        private void Title_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

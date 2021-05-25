@@ -57,6 +57,9 @@ namespace Adventure_book
             this.TitleBar.Size = new System.Drawing.Size(647, 38);
             this.TitleBar.TabIndex = 0;
             this.TitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
+            this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
+            this.TitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);
             // 
             // Title
             // 
@@ -69,6 +72,9 @@ namespace Adventure_book
             this.Title.TabIndex = 3;
             this.Title.Text = "Add Task";
             this.Title.Click += new System.EventHandler(this.label1_Click);
+            this.Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Title_MouseDown);
+            this.Title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Title_MouseMove);
+            this.Title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Title_MouseUp);
             // 
             // button2
             // 

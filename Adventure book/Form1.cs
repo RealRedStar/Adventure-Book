@@ -38,6 +38,11 @@ namespace Adventure_book
 
         public Color unpushed = ColorTranslator.FromHtml("#252526");
         public Color pushed = ColorTranslator.FromHtml("#007ACC");
+        int mouseX;
+        int mouseY;
+        int mouseinX;
+        int mouseinY;
+        Boolean mouseDown;
         MainDirectory mn = new MainDirectory();
         string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
         int CoinsOwned = 0;
@@ -96,18 +101,45 @@ namespace Adventure_book
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseLocation = new Point(-e.X, -e.Y);
+            mouseinX = MousePosition.X - Bounds.X;
+            mouseinY = MousePosition.Y - Bounds.Y;
+            mouseDown = true;
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (mouseDown)
             {
-                Point mousePose = Control.MousePosition;
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
-                Location = mousePose;
+                mouseX = MousePosition.X - mouseinX;
+                mouseY = MousePosition.Y - mouseinY;
+                this.SetDesktopLocation(mouseX, mouseY);
             }
         }
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseinX = MousePosition.X - Bounds.X;
+            mouseinY = MousePosition.Y - Bounds.Y;
+            mouseDown = true;
+        }
+
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                mouseX = MousePosition.X - mouseinX;
+                mouseY = MousePosition.Y - mouseinY;
+                this.SetDesktopLocation(mouseX, mouseY);
+            }
+        }        
+        private void label1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
 
         private void chestroom_Click(object sender, EventArgs e)
         {
@@ -149,20 +181,6 @@ namespace Adventure_book
             menu3.Visible = false;
             menu4.Visible = true;
 
-        }
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseLocation = new Point(-e.X, -e.Y);
-        }
-
-        private void label1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Point mousePose = Control.MousePosition;
-                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
-                Location = mousePose;
-            }
         }
 
         
@@ -491,5 +509,12 @@ namespace Adventure_book
 
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
