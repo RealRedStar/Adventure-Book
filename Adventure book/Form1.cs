@@ -18,23 +18,6 @@ namespace Adventure_book
 
         public Point mouseLocation;
 
-        // - Již staré metody
-        //public void chestEnable()
-        //{
-        //    normalChest.Visible = true;
-        //    magicalChest.Visible = true;
-
-        //    normalChestLabel.Visible = true;
-        //    magicalChestLabel.Visible = true;
-        //}
-        //public void chestDisable()
-        //{
-        //    normalChest.Visible = false;
-        //    magicalChest.Visible = false;
-
-        //    normalChestLabel.Visible = false;
-        //    magicalChestLabel.Visible = false;
-        //}
 
         public Color unpushed = ColorTranslator.FromHtml("#252526");
         public Color pushed = ColorTranslator.FromHtml("#007ACC");
@@ -483,6 +466,55 @@ namespace Adventure_book
             }
 
             DataToTable();
+        }        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ArrayList text = new ArrayList();
+            try
+            {
+                int index = DataGrid.CurrentCell.RowIndex;
+                using (StreamReader streamReader = new StreamReader(path))
+                {
+                    for (int i = 0; i < File.ReadLines(path).Count(); i++)
+                    {
+                        text.Add(streamReader.ReadLine());
+                    }
+                }
+                File.Delete(path);
+
+                using (StreamWriter writer = File.AppendText(path))
+                {
+                    for (int i = 0; i < text.Count; i++)
+                    {
+                        if (i != index)
+                        {
+                            writer.WriteLine(text[i]);
+                        }
+                    }
+                }
+                int chestRate = new Random().Next(0, 100);
+                if (chestRate <= 5)
+                {
+                    int tmp = int.Parse(magicalChestLabel.Text);
+                    tmp++;
+                    magicalChestLabel.Text = tmp.ToString();
+                } 
+                else
+                {
+                    int tmp = int.Parse(normalChestLabel.Text);
+                    tmp++;
+                    normalChestLabel.Text = tmp.ToString();
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
+            }
+
+            DataToTable();
+
+
         }
 
         private void DataGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -529,6 +561,8 @@ namespace Adventure_book
                 BackColor = ColorTranslator.FromHtml("#FFFFFF");
                 AddHomework.BackColor = ColorTranslator.FromHtml("#E8E8E8");
                 AddHomework.ForeColor = ColorTranslator.FromHtml("#000000");
+                button4.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                button4.ForeColor = ColorTranslator.FromHtml("#000000");
                 button3.BackColor = ColorTranslator.FromHtml("#E8E8E8");
                 button3.ForeColor = ColorTranslator.FromHtml("#000000");
                 button2.BackColor = ColorTranslator.FromHtml("#E8E8E8");
@@ -564,6 +598,8 @@ namespace Adventure_book
                 button2.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 button3.BackColor = ColorTranslator.FromHtml("#242425");
                 button3.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                button4.BackColor = ColorTranslator.FromHtml("#242425");
+                button4.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 chestroom.BackColor = unpushed;
                 calendar.BackColor = unpushed;
                 character.BackColor = unpushed;
@@ -571,11 +607,6 @@ namespace Adventure_book
                 ToSettings();
 
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
 

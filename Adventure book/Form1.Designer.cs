@@ -29,7 +29,7 @@ namespace Adventure_book
         /// Metoda vyžadovaná pro podporu Návrháře - neupravovat
         /// obsah této metody v editoru kódu.
         /// </summary>
-        public void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@ namespace Adventure_book
             this.magicalChestLabel = new System.Windows.Forms.Label();
             this.normalChestLabel = new System.Windows.Forms.Label();
             this.menu2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.AddHomework = new System.Windows.Forms.Button();
             this.DataGrid = new System.Windows.Forms.DataGridView();
@@ -89,7 +90,6 @@ namespace Adventure_book
             this.label1.Size = new System.Drawing.Size(274, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Adventure Task Book";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
@@ -213,6 +213,7 @@ namespace Adventure_book
             // menu2
             // 
             this.menu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu2.Controls.Add(this.button4);
             this.menu2.Controls.Add(this.button3);
             this.menu2.Controls.Add(this.AddHomework);
             this.menu2.Controls.Add(this.DataGrid);
@@ -220,6 +221,19 @@ namespace Adventure_book
             this.menu2.Name = "menu2";
             this.menu2.Size = new System.Drawing.Size(564, 326);
             this.menu2.TabIndex = 14;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(442, 45);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 32);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "✓";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -418,7 +432,7 @@ namespace Adventure_book
         public System.Windows.Forms.Label magicalChestLabel;
         public System.Windows.Forms.Label normalChestLabel;
         public System.Windows.Forms.Button settings;
-        public System.Windows.Forms.PictureBox normalChest;
+        protected System.Windows.Forms.PictureBox normalChest;
         public System.Windows.Forms.PictureBox magicalChest;
         public System.Windows.Forms.DataGridView DataGrid;
         private System.Windows.Forms.Panel menu2;
@@ -431,6 +445,7 @@ namespace Adventure_book
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox whiteMode;
         public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Button button4;
     }
 }
 
