@@ -27,8 +27,8 @@ namespace Adventure_book
         int mouseinY;
         Boolean mouseDown;
         MainDirectory mn = new MainDirectory();
-        string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
-        string settingsPath = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt";
+        readonly string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
+        readonly string settingsPath = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt";
         int CoinsOwned = 0;
         Boolean lightMode;
         public Form1()
@@ -36,14 +36,14 @@ namespace Adventure_book
             InitializeComponent();
 
 
-            chestroom.Image = Properties.Resources.chestWhite;
+            Chestroom.Image = Properties.Resources.chestWhite;
             AddDialog addDialog = new AddDialog(lightMode);
             DataToTable();
             menu1.Visible = true;
             mn.Exist();
             Settings();
-            chestroom.BackColor = pushed;
-            settings.BackColor = unpushed;
+            Chestroom.BackColor = pushed;
+            SettingsMenu.BackColor = unpushed;
             
         }
 
@@ -128,29 +128,29 @@ namespace Adventure_book
             DataGrid.Visible = true;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseinX = MousePosition.X - Bounds.X;
             mouseinY = MousePosition.Y - Bounds.Y;
             mouseDown = true;
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        private void Panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
             {
@@ -159,18 +159,18 @@ namespace Adventure_book
                 this.SetDesktopLocation(mouseX, mouseY);
             }
         }
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        private void Panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
-        private void label1_MouseDown(object sender, MouseEventArgs e)
+        private void Label1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseinX = MousePosition.X - Bounds.X;
             mouseinY = MousePosition.Y - Bounds.Y;
             mouseDown = true;
         }
 
-        private void label1_MouseMove(object sender, MouseEventArgs e)
+        private void Label1_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
             {
@@ -179,13 +179,13 @@ namespace Adventure_book
                 this.SetDesktopLocation(mouseX, mouseY);
             }
         }        
-        private void label1_MouseUp(object sender, MouseEventArgs e)
+        private void Label1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
 
 
-        private void chestroom_Click(object sender, EventArgs e)
+        private void Chestroom_Click(object sender, EventArgs e)
         {
             prvniStrana pr = new prvniStrana();
             pr.activate(this);
@@ -197,7 +197,7 @@ namespace Adventure_book
 
         }
 
-        private void calendar_Click(object sender, EventArgs e)
+        private void Calendar_Click(object sender, EventArgs e)
         {
             druhaStrana dr = new druhaStrana();
             dr.activate(this);
@@ -207,7 +207,7 @@ namespace Adventure_book
             menu4.Visible = false;
         }
 
-        private void character_Click(object sender, EventArgs e)
+        private void Character_Click(object sender, EventArgs e)
         {
             tretiStrana tr = new tretiStrana();
             tr.activate(this);
@@ -216,7 +216,7 @@ namespace Adventure_book
             menu3.Visible = true;
             menu4.Visible = false;
         }
-        private void settings_Click(object sender, EventArgs e)
+        private void Settings_Click(object sender, EventArgs e)
         {
             ctvrtaStrana ct = new ctvrtaStrana();
             ct.activate(this);
@@ -229,11 +229,11 @@ namespace Adventure_book
 
         
 
-        private void normalChest_Click(object sender, EventArgs e)
+        private void NormalChest_Click(object sender, EventArgs e)
         {
-            if (int.Parse(normalChestLabel.Text) > 0)
+            if (int.Parse(NormalChestLabel.Text) > 0)
             {
-                normalChestLabel.Text = (int.Parse(normalChestLabel.Text) - 1).ToString();
+                NormalChestLabel.Text = (int.Parse(NormalChestLabel.Text) - 1).ToString();
             }
         }
         
@@ -246,7 +246,7 @@ namespace Adventure_book
 
 
         // Display the button down image.
-        private void magicalChest_MouseDown(object sender, MouseEventArgs e)
+        private void MagicalChest_MouseDown(object sender, MouseEventArgs e)
         {
             // See if the mouse is over the masked area.
             if (MouseIsOverButton(e.Location))
@@ -257,14 +257,14 @@ namespace Adventure_book
         }
 
         // Display the button up image.
-        private void magicalChest_MouseUp(object sender, MouseEventArgs e)
+        private void MagicalChest_MouseUp(object sender, MouseEventArgs e)
         {
             ClickMeButtonIsPressed = false;
             magicalChest.Image = Properties.Resources.magicalChestBig;
         }
 
         // If the button is pressed, display the appropriate image.
-        private void magicalChest_MouseMove(object sender, MouseEventArgs e)
+        private void MagicalChest_MouseMove(object sender, MouseEventArgs e)
         {
             // The picture the button should have.
             Image desired_picture = Properties.Resources.magicalChestBig;
@@ -313,10 +313,10 @@ namespace Adventure_book
         // The button has been clicked.
 
         // magicalChest - klik
-        private void magicalChest_Click(object sender, MouseEventArgs e)
+        private void MagicalChest_Click(object sender, MouseEventArgs e)
         {
             //Přidání peněz:
-            if (int.Parse(magicalChestLabel.Text) > 0)
+            if (int.Parse(MagicalChestLabel.Text) > 0)
             {
                 Random rnd = new Random();
                 this.CoinsOwned += rnd.Next(100, 200);
@@ -330,33 +330,33 @@ namespace Adventure_book
             // See if the mouse is over the masked area.
             if (MouseIsOverButton(e.Location))
             {
-                if (int.Parse(magicalChestLabel.Text) > 0)
+                if (int.Parse(MagicalChestLabel.Text) > 0)
                 {
-                    magicalChestLabel.Text = (int.Parse(magicalChestLabel.Text) - 1).ToString();
+                    MagicalChestLabel.Text = (int.Parse(MagicalChestLabel.Text) - 1).ToString();
                 }
             }
         }
 
         //normalChest - změna obrázků
-        private void normalChest_MouseDown(object sender, MouseEventArgs e)
+        private void NormalChest_MouseDown(object sender, MouseEventArgs e)
         {
             // See if the mouse is over the masked area.
             if (MouseIsOverButton(e.Location))
             {
                 ClickMeButtonIsPressed = true;
-                normalChest.Image = Properties.Resources.normalChestBigClicked;
+                NormalChest.Image = Properties.Resources.normalChestBigClicked;
             }
         }
 
         // Display the button up image.
-        private void normalChest_MouseUp(object sender, MouseEventArgs e)
+        private void NormalChest_MouseUp(object sender, MouseEventArgs e)
         {
             ClickMeButtonIsPressed = false;
-            normalChest.Image = Properties.Resources.normalChestBig;
+            NormalChest.Image = Properties.Resources.normalChestBig;
         }
 
         // If the button is pressed, display the appropriate image.
-        private void normalChest_MouseMove(object sender, MouseEventArgs e)
+        private void NormalChest_MouseMove(object sender, MouseEventArgs e)
         {
             // The picture the button should have.
             Image desired_picture = Properties.Resources.normalChestBig;
@@ -379,8 +379,8 @@ namespace Adventure_book
             }
 
             // See if we need to change the button image.
-            if (normalChest.Image != desired_picture)
-                normalChest.Image = desired_picture;
+            if (NormalChest.Image != desired_picture)
+                NormalChest.Image = desired_picture;
         }
 
         // Return true if the mouse is over the button's masked area.
@@ -388,10 +388,10 @@ namespace Adventure_book
         // The button has been clicked.
 
         //normalChest - klik
-        private void normalChest_Click(object sender, MouseEventArgs e)
+        private void NormalChest_Click(object sender, MouseEventArgs e)
         {
             //Přidání peněz:
-            if (int.Parse(normalChestLabel.Text) > 0)
+            if (int.Parse(NormalChestLabel.Text) > 0)
             {
                 Random rnd = new Random();
                 this.CoinsOwned += rnd.Next(10, 100);
@@ -405,14 +405,14 @@ namespace Adventure_book
             // See if the mouse is over the masked area.
             if (MouseIsOverButton(e.Location))
             {
-                if (int.Parse(normalChestLabel.Text) > 0)
+                if (int.Parse(NormalChestLabel.Text) > 0)
                 {
-                    normalChestLabel.Text = (int.Parse(normalChestLabel.Text) - 1).ToString();
+                    NormalChestLabel.Text = (int.Parse(NormalChestLabel.Text) - 1).ToString();
                 }
             }
         }
 
-        private void magicalChest_Click(object sender, EventArgs e)
+        private void MagicalChest_Click(object sender, EventArgs e)
         {
             
         }
@@ -422,7 +422,7 @@ namespace Adventure_book
             
         }
 
-        private void menu2_Paint(object sender, PaintEventArgs e)
+        private void Menu2_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -434,7 +434,7 @@ namespace Adventure_book
             DataToTable();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             ArrayList text = new ArrayList();
             try
@@ -467,7 +467,7 @@ namespace Adventure_book
 
             DataToTable();
         }        
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             ArrayList text = new ArrayList();
             try
@@ -495,15 +495,15 @@ namespace Adventure_book
                 int chestRate = new Random().Next(0, 100);
                 if (chestRate <= 5)
                 {
-                    int tmp = int.Parse(magicalChestLabel.Text);
+                    int tmp = int.Parse(MagicalChestLabel.Text);
                     tmp++;
-                    magicalChestLabel.Text = tmp.ToString();
+                    MagicalChestLabel.Text = tmp.ToString();
                 } 
                 else
                 {
-                    int tmp = int.Parse(normalChestLabel.Text);
+                    int tmp = int.Parse(NormalChestLabel.Text);
                     tmp++;
-                    normalChestLabel.Text = tmp.ToString();
+                    NormalChestLabel.Text = tmp.ToString();
                 }
                 
             }
@@ -527,22 +527,22 @@ namespace Adventure_book
 
         }
 
-        private void normalChestLabel_Click(object sender, EventArgs e)
+        private void NormalChestLabel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void magicalChestLabel_Click(object sender, EventArgs e)
+        private void MagicalChestLabel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void whiteMode_CheckedChanged(object sender, EventArgs e)
+        private void LightMode_CheckedChanged(object sender, EventArgs e)
         {
             if (whiteMode.Checked)
             {
@@ -555,9 +555,9 @@ namespace Adventure_book
                 label1.ForeColor = ColorTranslator.FromHtml("#000000");
                 label2.ForeColor = ColorTranslator.FromHtml("#000000");
                 label4.ForeColor = ColorTranslator.FromHtml("#000000");
-                txtCoins.ForeColor = ColorTranslator.FromHtml("#000000");
-                normalChestLabel.ForeColor = ColorTranslator.FromHtml("#000000");
-                magicalChestLabel.ForeColor = ColorTranslator.FromHtml("#000000");
+                CoinsLabel.ForeColor = ColorTranslator.FromHtml("#000000");
+                NormalChestLabel.ForeColor = ColorTranslator.FromHtml("#000000");
+                MagicalChestLabel.ForeColor = ColorTranslator.FromHtml("#000000");
                 BackColor = ColorTranslator.FromHtml("#FFFFFF");
                 AddHomework.BackColor = ColorTranslator.FromHtml("#E8E8E8");
                 AddHomework.ForeColor = ColorTranslator.FromHtml("#000000");
@@ -565,13 +565,13 @@ namespace Adventure_book
                 button4.ForeColor = ColorTranslator.FromHtml("#000000");
                 button3.BackColor = ColorTranslator.FromHtml("#E8E8E8");
                 button3.ForeColor = ColorTranslator.FromHtml("#000000");
-                button2.BackColor = ColorTranslator.FromHtml("#E8E8E8");
-                button2.ForeColor = ColorTranslator.FromHtml("#000000");
-                button1.BackColor = ColorTranslator.FromHtml("#E8E8E8");
-                button1.ForeColor = ColorTranslator.FromHtml("#000000");
-                chestroom.BackColor = unpushed;
-                calendar.BackColor = unpushed;
-                character.BackColor = unpushed;
+                MinimizeButton.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                MinimizeButton.ForeColor = ColorTranslator.FromHtml("#000000");
+                ExitButton.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+                ExitButton.ForeColor = ColorTranslator.FromHtml("#000000");
+                Chestroom.BackColor = unpushed;
+                Calendar.BackColor = unpushed;
+                Character.BackColor = unpushed;
                 lightMode = true;
                 ToSettings();
             }
@@ -586,23 +586,23 @@ namespace Adventure_book
                 label1.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 label2.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 label4.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-                txtCoins.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-                normalChestLabel.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-                magicalChestLabel.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                CoinsLabel.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                NormalChestLabel.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                MagicalChestLabel.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
                 AddHomework.BackColor = ColorTranslator.FromHtml("#242425");
                 AddHomework.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-                button1.BackColor = ColorTranslator.FromHtml("#242425");
-                button1.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-                button2.BackColor = ColorTranslator.FromHtml("#242425");
-                button2.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                ExitButton.BackColor = ColorTranslator.FromHtml("#242425");
+                ExitButton.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                MinimizeButton.BackColor = ColorTranslator.FromHtml("#242425");
+                MinimizeButton.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 button3.BackColor = ColorTranslator.FromHtml("#242425");
                 button3.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 button4.BackColor = ColorTranslator.FromHtml("#242425");
                 button4.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
-                chestroom.BackColor = unpushed;
-                calendar.BackColor = unpushed;
-                character.BackColor = unpushed;
+                Chestroom.BackColor = unpushed;
+                Calendar.BackColor = unpushed;
+                Character.BackColor = unpushed;
                 lightMode = false;
                 ToSettings();
 

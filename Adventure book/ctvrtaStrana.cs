@@ -12,14 +12,14 @@ namespace Adventure_book
 
         public void activate(Form1 form)
         {
-            form.chestroom.BackColor = form.unpushed;
-            form.calendar.BackColor = form.unpushed;
-            form.character.BackColor = form.unpushed;
-            form.settings.BackColor = form.pushed;
-            form.character.Image = Properties.Resources.userBlue;
-            form.calendar.Image = Properties.Resources.calendarBlue;
-            form.chestroom.Image = Properties.Resources.chestBlue;
-            form.settings.Image = Properties.Resources.gearWhite;
+            form.Chestroom.BackColor = form.unpushed;
+            form.Calendar.BackColor = form.unpushed;
+            form.Character.BackColor = form.unpushed;
+            form.SettingsMenu.BackColor = form.pushed;
+            form.Character.Image = Properties.Resources.userBlue;
+            form.Calendar.Image = Properties.Resources.calendarBlue;
+            form.Chestroom.Image = Properties.Resources.chestBlue;
+            form.SettingsMenu.Image = Properties.Resources.gearWhite;
 
         }
     }
