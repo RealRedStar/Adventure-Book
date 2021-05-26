@@ -45,20 +45,80 @@ namespace Adventure_book
         Boolean mouseDown;
         MainDirectory mn = new MainDirectory();
         string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
+        string settingsPath = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt";
         int CoinsOwned = 0;
-        Boolean lightMode = false;
+        Boolean lightMode;
         public Form1()
         {
             InitializeComponent();
 
-            chestroom.BackColor = pushed;
+
             chestroom.Image = Properties.Resources.chestWhite;
             AddDialog addDialog = new AddDialog(lightMode);
             DataToTable();
             menu1.Visible = true;
             mn.Exist();
+            Settings();
+            chestroom.BackColor = pushed;
+            settings.BackColor = unpushed;
             
         }
+
+
+        public void Settings()
+        {
+            try
+            {
+                String[] text = File.ReadAllLines(settingsPath);
+                try
+                {
+                    if (text[0].Contains("true"))
+                    {
+                        whiteMode.Checked = true;
+                        lightMode = true;
+                    }
+                    else
+                    {
+                        whiteMode.Checked = false;
+                        lightMode = false;
+                    }
+                } catch(IndexOutOfRangeException)
+                {
+                    ToSettings();
+                }
+            } catch(NullReferenceException)
+            {
+                ToSettings();
+            }
+            
+        }
+        public void ToSettings()
+        {
+            if (lightMode)
+            {
+                if (File.Exists(settingsPath))
+                {
+                    File.Delete(settingsPath);
+                    File.WriteAllText(settingsPath, "light-mode: true");
+                } else
+                {
+                    File.WriteAllText(settingsPath, "light-mode: true");
+                }
+            }
+            else
+            {
+                if (File.Exists(settingsPath))
+                {
+                    File.Delete(settingsPath);
+                    File.WriteAllText(settingsPath, "light-mode: false");
+                }
+                else
+                {
+                    File.WriteAllText(settingsPath, "light-mode: false");
+                }
+            }
+        }
+
         public void DataToTable()
         {
             DataTable table = new DataTable();
@@ -79,6 +139,7 @@ namespace Adventure_book
                     }
                     table.Rows.Add(row[0], row[1], row[2], row[3]);
                 }
+                streamReader.Close();
             }
             DataGrid.DataSource = table;
             DataGrid.Visible = true;
@@ -416,7 +477,7 @@ namespace Adventure_book
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
             }
@@ -478,6 +539,7 @@ namespace Adventure_book
                 calendar.BackColor = unpushed;
                 character.BackColor = unpushed;
                 lightMode = true;
+                ToSettings();
             }
             else
             {
@@ -506,6 +568,7 @@ namespace Adventure_book
                 calendar.BackColor = unpushed;
                 character.BackColor = unpushed;
                 lightMode = false;
+                ToSettings();
 
             }
         }

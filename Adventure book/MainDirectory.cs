@@ -16,6 +16,7 @@ namespace Adventure_book
                 Directory.CreateDirectory(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB");
                 File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt");
                 File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt");
+                File.WriteAllText(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt", "light-mode: true");
             } else
             {
                 if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt"))
@@ -24,7 +25,7 @@ namespace Adventure_book
                 }
                 if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt"))
                 {
-                    File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt");
+                    File.WriteAllText(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt", "light-mode: true");
                 }
             }
         }
