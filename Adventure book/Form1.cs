@@ -605,6 +605,7 @@ namespace Adventure_book
                 MinimizeButton.ForeColor = ColorTranslator.FromHtml("#000000");
                 ExitButton.BackColor = ColorTranslator.FromHtml("#E8E8E8");
                 ExitButton.ForeColor = ColorTranslator.FromHtml("#000000");
+                LanguageTxt.ForeColor = ColorTranslator.FromHtml("#000000");
                 Chestroom.BackColor = unpushed;
                 Calendar.BackColor = unpushed;
                 Character.BackColor = unpushed;
@@ -636,6 +637,7 @@ namespace Adventure_book
                 button3.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 button4.BackColor = ColorTranslator.FromHtml("#242425");
                 button4.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                LanguageTxt.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
                 Chestroom.BackColor = unpushed;
                 Calendar.BackColor = unpushed;
                 Character.BackColor = unpushed;
@@ -645,6 +647,28 @@ namespace Adventure_book
             }
         }
 
+        private void LanguageTxt_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void LanguageSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (LanguageSelect.SelectedItem.Equals("Čeština"))
+            {
+                label1.Text = "Dobrodružný úkolníček";
+                label2.Text = "Nastavení";
+                label4.Text = "Bílý režim:";
+                LanguageTxt.Text = "Jazyk:";
+                CoinsLabel.Text = "Mince:";
+            } else if (LanguageSelect.SelectedItem.Equals("English"))
+            {
+                label1.Text = "Adventure Task Book";
+                label2.Text = "Settings";
+                label4.Text = "White Mode:";
+                LanguageTxt.Text = "Language:";
+                CoinsLabel.Text = "Coins:";
+            }
+        }
     }
 }

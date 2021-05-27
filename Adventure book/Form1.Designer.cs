@@ -56,6 +56,8 @@ namespace Adventure_book
             this.label4 = new System.Windows.Forms.Label();
             this.whiteMode = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.LanguageTxt = new System.Windows.Forms.Label();
+            this.LanguageSelect = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
@@ -342,6 +344,8 @@ namespace Adventure_book
             // menu4
             // 
             this.menu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.menu4.Controls.Add(this.LanguageSelect);
+            this.menu4.Controls.Add(this.LanguageTxt);
             this.menu4.Controls.Add(this.label4);
             this.menu4.Controls.Add(this.whiteMode);
             this.menu4.Controls.Add(this.label2);
@@ -384,6 +388,31 @@ namespace Adventure_book
             this.label2.TabIndex = 3;
             this.label2.Text = "Settings";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
+            // 
+            // LanguageTxt
+            // 
+            this.LanguageTxt.AutoSize = true;
+            this.LanguageTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LanguageTxt.ForeColor = System.Drawing.Color.White;
+            this.LanguageTxt.Location = new System.Drawing.Point(10, 94);
+            this.LanguageTxt.Name = "LanguageTxt";
+            this.LanguageTxt.Size = new System.Drawing.Size(85, 20);
+            this.LanguageTxt.TabIndex = 10;
+            this.LanguageTxt.Text = "Language:";
+            this.LanguageTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LanguageTxt.Click += new System.EventHandler(this.LanguageTxt_Click);
+            // 
+            // LanguageSelect
+            // 
+            this.LanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LanguageSelect.Items.AddRange(new object[] {
+            "English",
+            "Čeština"});
+            this.LanguageSelect.Location = new System.Drawing.Point(142, 94);
+            this.LanguageSelect.Name = "LanguageSelect";
+            this.LanguageSelect.Size = new System.Drawing.Size(121, 21);
+            this.LanguageSelect.TabIndex = 11;
+            this.LanguageSelect.SelectedIndexChanged += new System.EventHandler(this.LanguageSelect_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -446,6 +475,8 @@ namespace Adventure_book
         private System.Windows.Forms.CheckBox whiteMode;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox LanguageSelect;
+        public System.Windows.Forms.Label LanguageTxt;
     }
 }
 
