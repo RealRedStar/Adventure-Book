@@ -656,14 +656,12 @@ namespace Adventure_book
         {
             if (LanguageSelect.SelectedItem.Equals("Čeština"))
             {
-                label1.Text = "Dobrodružný úkolníček";
                 label2.Text = "Nastavení";
                 label4.Text = "Bílý režim:";
                 LanguageTxt.Text = "Jazyk:";
                 CoinsLabel.Text = "Mince:";
             } else if (LanguageSelect.SelectedItem.Equals("English"))
             {
-                label1.Text = "Adventure Task Book";
                 label2.Text = "Settings";
                 label4.Text = "White Mode:";
                 LanguageTxt.Text = "Language:";
