@@ -68,9 +68,9 @@ namespace Adventure_book
             this.Title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Title.Location = new System.Drawing.Point(3, 3);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(129, 31);
+            this.Title.Size = new System.Drawing.Size(120, 31);
             this.Title.TabIndex = 3;
-            this.Title.Text = "Add Task";
+            this.Title.Text = "Add task";
             this.Title.Click += new System.EventHandler(this.label1_Click);
             this.Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Title_MouseDown);
             this.Title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Title_MouseMove);
@@ -151,9 +151,9 @@ namespace Adventure_book
             this.TaskDeadline.ForeColor = System.Drawing.Color.White;
             this.TaskDeadline.Location = new System.Drawing.Point(381, 78);
             this.TaskDeadline.Name = "TaskDeadline";
-            this.TaskDeadline.Size = new System.Drawing.Size(114, 20);
+            this.TaskDeadline.Size = new System.Drawing.Size(111, 20);
             this.TaskDeadline.TabIndex = 14;
-            this.TaskDeadline.Text = "Task Deadline:";
+            this.TaskDeadline.Text = "Task deadline:";
             this.TaskDeadline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button3
@@ -178,7 +178,7 @@ namespace Adventure_book
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 25);
             this.button4.TabIndex = 17;
-            this.button4.Text = "Cancel task";
+            this.button4.Text = "Cancel";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 

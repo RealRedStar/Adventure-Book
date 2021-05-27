@@ -38,7 +38,7 @@ namespace Adventure_book
 
 
             Chestroom.Image = Properties.Resources.chestWhite;
-            AddDialog addDialog = new AddDialog(lightMode);
+            AddDialog addDialog = new AddDialog(lightMode, LanguageSelect.SelectedIndex);
             DataToTable();
             menu1.Visible = true;
             mn.Exist();
@@ -67,6 +67,14 @@ namespace Adventure_book
                         whiteMode.Checked = false;
                         lightMode = false;
                     }
+                    if (text[1].Contains("English"))
+                    {
+                        LanguageSelect.SelectedIndex = 0;
+                    } else if (text[1].Contains("Čeština")) 
+                    {
+                        LanguageSelect.SelectedIndex = 1;
+                    }
+
                 } catch(IndexOutOfRangeException)
                 {
                     ToSettings();
@@ -84,10 +92,27 @@ namespace Adventure_book
                 if (File.Exists(settingsPath))
                 {
                     File.Delete(settingsPath);
-                    File.WriteAllText(settingsPath, "light-mode: true");
-                } else
+                    if (LanguageSelect.SelectedIndex == -1)
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: true " + "\n" + "language: English");
+                    }
+                    else
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: true " + "\n" + "language: " + LanguageSelect.SelectedItem.ToString());
+                    }
+
+                }
+                else
                 {
-                    File.WriteAllText(settingsPath, "light-mode: true");
+                    if (LanguageSelect.SelectedIndex == -1)
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: true " + "\n" + "language: English");
+                    }
+                    else
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: true " + "\n" + "language: " + LanguageSelect.SelectedItem.ToString());
+                    }
+
                 }
             }
             else
@@ -95,11 +120,26 @@ namespace Adventure_book
                 if (File.Exists(settingsPath))
                 {
                     File.Delete(settingsPath);
-                    File.WriteAllText(settingsPath, "light-mode: false");
+                    if (LanguageSelect.SelectedItem.Equals(null))
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: false " + "\n" + "language: English");
+                    }
+                    else
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: false " + "\n" + "language: " + LanguageSelect.SelectedItem.ToString());
+                    }
+
                 }
                 else
                 {
-                    File.WriteAllText(settingsPath, "light-mode: false");
+                    if (LanguageSelect.SelectedItem.Equals(null))
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: false " + "\n" + "language: English");
+                    }
+                    else
+                    {
+                        File.WriteAllText(settingsPath, "light-mode: false " + "\n" + "language: " + LanguageSelect.SelectedItem.ToString());
+                    }
                 }
             }
         }
@@ -357,8 +397,9 @@ namespace Adventure_book
             if (int.Parse(MagicalChestLabel.Text) > 0)
             {
                 Random rnd = new Random();
-                this.CoinsOwned += rnd.Next(100, 200);
-                Coins.Text = this.CoinsOwned.ToString();
+                CoinsOwned += rnd.Next(100, 200);
+                CoinsOwned += int.Parse(Coins.Text);
+                Coins.Text = CoinsOwned.ToString();
             }
             else
             {
@@ -433,8 +474,9 @@ namespace Adventure_book
             if (int.Parse(NormalChestLabel.Text) > 0)
             {
                 Random rnd = new Random();
-                this.CoinsOwned += rnd.Next(10, 100);
-                Coins.Text = this.CoinsOwned.ToString();
+                CoinsOwned += rnd.Next(10, 100);
+                CoinsOwned += int.Parse(Coins.Text);
+                Coins.Text = CoinsOwned.ToString();
             }
             else
             {
@@ -452,19 +494,9 @@ namespace Adventure_book
             SetUserStats();
         }
 
-        private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void Menu2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void AddHomework_Click(object sender, EventArgs e)
         {
-            AddDialog dialog = new AddDialog(lightMode);
+            AddDialog dialog = new AddDialog(lightMode, LanguageSelect.SelectedIndex);
             dialog.ShowDialog();
             DataToTable();
         }
@@ -495,7 +527,7 @@ namespace Adventure_book
                     }
                 }
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
             }
@@ -654,18 +686,20 @@ namespace Adventure_book
 
         private void LanguageSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (LanguageSelect.SelectedItem.Equals("Čeština"))
+            if (LanguageSelect.SelectedIndex == 1)
             {
                 label2.Text = "Nastavení";
                 label4.Text = "Bílý režim:";
                 LanguageTxt.Text = "Jazyk:";
                 CoinsLabel.Text = "Mince:";
-            } else if (LanguageSelect.SelectedItem.Equals("English"))
+                ToSettings();
+            } else if (LanguageSelect.SelectedIndex == 0)
             {
                 label2.Text = "Settings";
                 label4.Text = "White Mode:";
                 LanguageTxt.Text = "Language:";
                 CoinsLabel.Text = "Coins:";
+                ToSettings();
             }
         }
     }

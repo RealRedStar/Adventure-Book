@@ -19,7 +19,7 @@ namespace Adventure_book
         int mouseinX;
         int mouseinY; 
         Boolean mouseDown;
-        public AddDialog(Boolean lightMode)
+        public AddDialog(Boolean lightMode, int language)
         {
             InitializeComponent();
             if (lightMode)
@@ -43,6 +43,23 @@ namespace Adventure_book
                 TaskDescription.BackColor = ColorTranslator.FromHtml("#E8E8E8");
                 TitleBar.BackColor = ColorTranslator.FromHtml("#E8E8E8");
                 panel1.BackColor = ColorTranslator.FromHtml("#E8E8E8");
+            }
+            if (language == -1 || language == 0)
+            {
+                Title.Text = "Add task";
+                TaskName.Text = "Task name:";
+                TaskDescription.Text = "Task description:";
+                TaskDeadline.Text = "Task deadline:";
+                button3.Text = "Confirm task";
+                button4.Text = "Cancel";
+            } else if (language == 1)
+            {
+                Title.Text = "Přidání úkolu";
+                TaskName.Text = "Název úkolu:";
+                TaskDescription.Text = "Popis úkolu:";
+                TaskDeadline.Text = "Konečný termín:";
+                button3.Text = "Uložit úkol";
+                button4.Text = "Zrušit";
             }
         }
 

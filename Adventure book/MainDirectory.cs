@@ -15,7 +15,7 @@ namespace Adventure_book
             {
                 Directory.CreateDirectory(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB");
                 File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt").Close();
-                File.WriteAllText(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt", "light-mode: true");
+                File.WriteAllText(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt", "light-mode: true"+"\n"+"language: English");
                 File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\UserStats.txt").Close();
                 using (StreamWriter streamWriter = File.AppendText(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\UserStats.txt"))
                 {
@@ -32,7 +32,7 @@ namespace Adventure_book
                 }
                 if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt"))
                 {
-                    File.WriteAllText(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt", "light-mode: true");
+                    File.WriteAllText(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt", "light-mode: true" + "\n" + "language: English");
                 }
                 if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\UserStats.txt"))
                 {
