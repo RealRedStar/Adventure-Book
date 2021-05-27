@@ -29,6 +29,7 @@ namespace Adventure_book
         MainDirectory mn = new MainDirectory();
         readonly string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt";
         readonly string settingsPath = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt";
+        readonly string userStats = Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\UserStats.txt";
         int CoinsOwned = 0;
         Boolean lightMode;
         public Form1()
@@ -42,6 +43,7 @@ namespace Adventure_book
             menu1.Visible = true;
             mn.Exist();
             Settings();
+            GetUserStats();
             Chestroom.BackColor = pushed;
             SettingsMenu.BackColor = unpushed;
             
@@ -101,6 +103,42 @@ namespace Adventure_book
                 }
             }
         }
+        public void GetUserStats() 
+        {
+            try
+            {
+                string[] lines;
+                using (StreamReader stream = new StreamReader(userStats))
+                {
+                    lines = stream.ReadLine().Split();
+                    NormalChestLabel.Text = lines[1];
+                    lines = stream.ReadLine().Split();
+                    MagicalChestLabel.Text = lines[1];
+                    lines = stream.ReadLine().Split();
+                    Coins.Text = lines[1];
+                }
+            } catch(NullReferenceException)
+            {
+                SetUserStats();
+            }
+        }
+
+        public void SetUserStats()
+        {
+            if (File.Exists(userStats))
+            {
+                File.Delete(userStats);
+                File.Create(userStats).Close();
+                using (StreamWriter stream = File.AppendText(userStats))
+                {
+                    stream.WriteLine("NormalChest: " + NormalChestLabel.Text);
+                    stream.WriteLine("MagicalChest: " + MagicalChestLabel.Text);
+                    stream.WriteLine("Coins: " + Coins.Text);
+                }
+            }
+        }
+
+
 
         public void DataToTable()
         {
@@ -335,6 +373,7 @@ namespace Adventure_book
                     MagicalChestLabel.Text = (int.Parse(MagicalChestLabel.Text) - 1).ToString();
                 }
             }
+            SetUserStats();
         }
 
         //normalChest - změna obrázků
@@ -410,11 +449,7 @@ namespace Adventure_book
                     NormalChestLabel.Text = (int.Parse(NormalChestLabel.Text) - 1).ToString();
                 }
             }
-        }
-
-        private void MagicalChest_Click(object sender, EventArgs e)
-        {
-            
+            SetUserStats();
         }
 
         private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -513,6 +548,7 @@ namespace Adventure_book
             }
 
             DataToTable();
+            SetUserStats();
 
 
         }

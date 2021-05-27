@@ -141,6 +141,7 @@ namespace Adventure_book
             this.Coins.ReadOnly = true;
             this.Coins.Size = new System.Drawing.Size(100, 20);
             this.Coins.TabIndex = 13;
+            this.Coins.Text = "0";
             this.Coins.TextChanged += new System.EventHandler(this.Coins_TextChanged);
             // 
             // CoinsLabel
@@ -164,7 +165,6 @@ namespace Adventure_book
             this.magicalChest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.magicalChest.TabIndex = 11;
             this.magicalChest.TabStop = false;
-            this.magicalChest.Click += new System.EventHandler(this.MagicalChest_Click);
             this.magicalChest.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MagicalChest_Click);
             this.magicalChest.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MagicalChest_MouseDown);
             this.magicalChest.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MagicalChest_MouseMove);
@@ -193,7 +193,7 @@ namespace Adventure_book
             this.MagicalChestLabel.Name = "MagicalChestLabel";
             this.MagicalChestLabel.Size = new System.Drawing.Size(18, 20);
             this.MagicalChestLabel.TabIndex = 9;
-            this.MagicalChestLabel.Text = "1";
+            this.MagicalChestLabel.Text = "0";
             this.MagicalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MagicalChestLabel.Click += new System.EventHandler(this.MagicalChestLabel_Click);
             // 
@@ -206,7 +206,7 @@ namespace Adventure_book
             this.NormalChestLabel.Name = "NormalChestLabel";
             this.NormalChestLabel.Size = new System.Drawing.Size(18, 20);
             this.NormalChestLabel.TabIndex = 8;
-            this.NormalChestLabel.Text = "5";
+            this.NormalChestLabel.Text = "0";
             this.NormalChestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.NormalChestLabel.Click += new System.EventHandler(this.NormalChestLabel_Click);
             // 
