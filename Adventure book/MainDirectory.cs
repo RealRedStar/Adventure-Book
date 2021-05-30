@@ -28,7 +28,7 @@ namespace Adventure_book
             {
                 if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt"))
                 {
-                    File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt");
+                    File.Create(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Data.txt").Close();
                 }
                 if (!File.Exists(Environment.GetEnvironmentVariable("USERPROFILE") + @"\AppData\Roaming\ATB\Settings.txt"))
                 {

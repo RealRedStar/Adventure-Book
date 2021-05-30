@@ -53,11 +53,11 @@ namespace Adventure_book
             this.Chestroom = new System.Windows.Forms.Button();
             this.menu3 = new System.Windows.Forms.Panel();
             this.menu4 = new System.Windows.Forms.Panel();
+            this.LanguageSelect = new System.Windows.Forms.ComboBox();
+            this.LanguageTxt = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.whiteMode = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.LanguageTxt = new System.Windows.Forms.Label();
-            this.LanguageSelect = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magicalChest)).BeginInit();
@@ -354,6 +354,31 @@ namespace Adventure_book
             this.menu4.Size = new System.Drawing.Size(564, 327);
             this.menu4.TabIndex = 13;
             // 
+            // LanguageSelect
+            // 
+            this.LanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LanguageSelect.Items.AddRange(new object[] {
+            "English",
+            "Čeština"});
+            this.LanguageSelect.Location = new System.Drawing.Point(142, 94);
+            this.LanguageSelect.Name = "LanguageSelect";
+            this.LanguageSelect.Size = new System.Drawing.Size(121, 21);
+            this.LanguageSelect.TabIndex = 11;
+            this.LanguageSelect.SelectedIndexChanged += new System.EventHandler(this.LanguageSelect_SelectedIndexChanged);
+            // 
+            // LanguageTxt
+            // 
+            this.LanguageTxt.AutoSize = true;
+            this.LanguageTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LanguageTxt.ForeColor = System.Drawing.Color.White;
+            this.LanguageTxt.Location = new System.Drawing.Point(10, 94);
+            this.LanguageTxt.Name = "LanguageTxt";
+            this.LanguageTxt.Size = new System.Drawing.Size(85, 20);
+            this.LanguageTxt.TabIndex = 10;
+            this.LanguageTxt.Text = "Language:";
+            this.LanguageTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LanguageTxt.Click += new System.EventHandler(this.LanguageTxt_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -388,31 +413,6 @@ namespace Adventure_book
             this.label2.TabIndex = 3;
             this.label2.Text = "Settings";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
-            // 
-            // LanguageTxt
-            // 
-            this.LanguageTxt.AutoSize = true;
-            this.LanguageTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LanguageTxt.ForeColor = System.Drawing.Color.White;
-            this.LanguageTxt.Location = new System.Drawing.Point(10, 94);
-            this.LanguageTxt.Name = "LanguageTxt";
-            this.LanguageTxt.Size = new System.Drawing.Size(85, 20);
-            this.LanguageTxt.TabIndex = 10;
-            this.LanguageTxt.Text = "Language:";
-            this.LanguageTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LanguageTxt.Click += new System.EventHandler(this.LanguageTxt_Click);
-            // 
-            // LanguageSelect
-            // 
-            this.LanguageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LanguageSelect.Items.AddRange(new object[] {
-            "English",
-            "Čeština"});
-            this.LanguageSelect.Location = new System.Drawing.Point(142, 94);
-            this.LanguageSelect.Name = "LanguageSelect";
-            this.LanguageSelect.Size = new System.Drawing.Size(121, 21);
-            this.LanguageSelect.TabIndex = 11;
-            this.LanguageSelect.SelectedIndexChanged += new System.EventHandler(this.LanguageSelect_SelectedIndexChanged);
             // 
             // Form1
             // 

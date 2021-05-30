@@ -38,10 +38,11 @@ namespace Adventure_book
 
 
             Chestroom.Image = Properties.Resources.chestWhite;
+            mn.Exist();
             AddDialog addDialog = new AddDialog(lightMode, LanguageSelect.SelectedIndex);
             DataToTable();
             menu1.Visible = true;
-            mn.Exist();
+
             Settings();
             GetUserStats();
             Chestroom.BackColor = pushed;
@@ -315,8 +316,8 @@ namespace Adventure_book
             }
         }
         
-        // Od tohoto řádku začíná obří kód změny obrázků
-        // magicalChest - Image changing
+        // Od tohoto řádku začíná obří kód pro animaci změny obrázků
+        // magicalChest
         private bool ClickMeButtonIsPressed = false;
 
 
@@ -403,7 +404,14 @@ namespace Adventure_book
             }
             else
             {
-                MessageBox.Show("Nemáte žádné truhy k otevření.");
+                if (LanguageSelect.SelectedIndex == 0)
+                {
+                    MessageBox.Show("You don't have any chests.");
+                } else if (LanguageSelect.SelectedIndex == 1)
+                {
+                    MessageBox.Show("Nemáte žádné truhy k otevření.");
+                }
+
             }
 
             // See if the mouse is over the masked area.
@@ -480,7 +488,14 @@ namespace Adventure_book
             }
             else
             {
-                MessageBox.Show("Nemáte žádné truhy k otevření.");
+                if (LanguageSelect.SelectedIndex == 0)
+                {
+                    MessageBox.Show("You don't have any chests.");
+                }
+                else if (LanguageSelect.SelectedIndex == 1)
+                {
+                    MessageBox.Show("Nemáte žádné truhy k otevření.");
+                }
             }
 
             // See if the mouse is over the masked area.
@@ -529,7 +544,25 @@ namespace Adventure_book
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
+                if (LanguageSelect.SelectedIndex == 0)
+                {
+                    MessageBox.Show("You haven't selected any task or the data grid is empty.");
+                } else if (LanguageSelect.SelectedIndex == 1)
+                {
+                    MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                if (LanguageSelect.SelectedIndex == 0)
+                {
+                    MessageBox.Show("There was an error while reading file Data.txt. " + "\n" + "File not found.");
+                } else if (LanguageSelect.SelectedIndex == 1)
+                {
+                    MessageBox.Show("Vyskytla se chyba při čtení souboru Data.txt. " + "\n" + "Soubor nebyl nalezen.");
+                }
+                mn.Exist();
+                Button3_Click(sender, e);
             }
 
             DataToTable();
@@ -574,9 +607,29 @@ namespace Adventure_book
                 }
                 
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
-                MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
+                if (LanguageSelect.SelectedIndex == 0)
+                {
+                    MessageBox.Show("You haven't selected any task or the data grid is empty.");
+                }
+                else if (LanguageSelect.SelectedIndex == 1)
+                {
+                    MessageBox.Show("Není vybrána žádná hodnota, nebo je tabulka prázdná.");
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                if (LanguageSelect.SelectedIndex == 0)
+                {
+                    MessageBox.Show("There was an error while reading file Data.txt. " + "\n" + "File not found.");
+                }
+                else if (LanguageSelect.SelectedIndex == 1)
+                {
+                    MessageBox.Show("Vyskytla se chyba při čtení souboru Data.txt. " + "\n" + "Soubor nebyl nalezen.");
+                }
+                mn.Exist();
+                Button3_Click(sender, e);
             }
 
             DataToTable();
